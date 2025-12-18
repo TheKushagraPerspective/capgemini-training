@@ -1,4 +1,4 @@
-package FirstDay;
+package Day1;
 
 public class Intro {
 
