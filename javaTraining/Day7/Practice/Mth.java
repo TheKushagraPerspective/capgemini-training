@@ -1,0 +1,22 @@
+package Day7.Practice;
+
+public class Mth {
+    public static void main(String[] args) {
+        m1(m2() , m3(100) , 200);
+    }
+
+
+    public static void m1(int a , int b , int x) {
+        System.out.println("m1() method -> " + x);
+        System.out.println("m2() method -> " + a);
+        System.out.println("m3() method -> " + b);
+    }
+
+    public static int m2() {
+        return 12200727;
+    }
+
+    public static int m3(int x) {
+        return x;
+    }
+}
