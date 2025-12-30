@@ -1,0 +1,40 @@
+TYPECASTING
+
+Primitive typecasting (Not recommended)
+    Widening (implicit call)
+        Converting smaller range primitive dt into higher range primitive dt
+        This is done implicitly done by the compiler
+        Byte < short <->char < int < long < float < double
+        Note:- boolean can’t be typecast
+        Float is considered greater than long when it comes to implicit typecasting
+        Char -> int possible bcz compiler knows the ascii value of characters but int -> char not possible (primitive DT -> char not possible)
+    Narrowing (explicit call)
+        Converting higher range primitive dt into smaller range primitive dt
+        This is done by programmer only
+        Double > float > long > int > short <-> char > byte
+        This is done using typecast operator
+        Syntax :- smaller-primitive-dt varName = (smaller-primitive-dt) higher-primitive-dt-var
+        Here we can convert num to character explicitly
+Non-Primitive typecasting (highly recommended)
+
+
+
+SCANNER CLASS
+
+Use to take inputs from the user/programmer
+    Steps:- 
+        Import java.util.Scanner;    util -> package , Scanner -> class
+        Declare Scanner class object
+        It can be declared inside class block as well as method block
+        Syntax :- Scanner objRefName = new Scanner(System.in);
+    In-build methods of the Scanner class
+        nextByte()
+        nextShort()
+        nextInt()
+        nextLong()
+        nextFloat()
+        nextDouble()
+        nextBoolean()
+        next().charAt(0)    -> to take character as a input
+        next()		     -> to take a single word as a input
+        nextLine()	     -> to take group of words as a input

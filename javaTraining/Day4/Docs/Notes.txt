@@ -1,0 +1,25 @@
+CONTROL STATEMENTS
+
+Decision Making Statement
+    If
+    If-else
+    If-else ladder
+    Switch
+    Nested if-else
+LoopingStatement
+    For      (entry checking loop)
+    While	(entry checking loop)
+    Do-while    (exit checking loop)
+    Foreach (enhanced loop)
+    Nested loop
+Jumping Statement
+    Break
+    Continue
+    Return 
+
+Syntax of switch statement :- 
+    Switch (value/variable/expression) {
+        Case value/expression : {} break;
+        Case value/expression : {} break;
+        Default : {}
+    }

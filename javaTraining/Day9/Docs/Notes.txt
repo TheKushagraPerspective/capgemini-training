@@ -1,0 +1,31 @@
+ARRAYS
+
+1) Continues block of memory which is used to store group of elements or value
+2) Fixed size and later we can’t re-modify it’s length
+3) Accepts only Homogeneous datatypes:- all values must be of same datatype
+4) Indexing starts from 0 and ends with length - 1
+5) It accepts duplicates value/elements also
+6) It is an object in java
+7) It doesn't have any inbuild methods
+8) It is a library and it is present in lang package
+
+SYNTAX
+
+declaration + initializing values directly:- 
+    datatype arr-var-name[] = {val1 , val2 , val3 , ... valn};
+    OR
+    datatype[] arr-var-name = {val1 , val2 , val3 , ... valn};
+    OR
+    datatype[] arr-var-name = new datatype[]{val1 , val2 , val3 , ... valn};
+
+declaration + initializing size first:- 
+    datatype arr-var-name[] = new dataype[SIZE];
+
+There are two types of index out of bound exceptions:- 1) ArrayIndexOutOfBound Exception 2) StringIndexOutOfBound Exception
+
+Note:- int arr[] = new int[5]{};
+       Error:- array creation with both dimension expression and initialization is illigal means we can have only one. we can define the size of the array and if we have specify the size then we can  not initialize the elements of the array that we can do using {}, and if we want to use {} to initialize the elements of the array then no need to give the size inside []. if {} is empty then it means 0 elements is there but not complile time error. it successfully execute the code.
+
+       int arr[] = new arr[sc.nextInt()]; possible, we can take size input inside the [] also.  
+
+    

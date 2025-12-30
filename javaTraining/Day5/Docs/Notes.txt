@@ -1,0 +1,109 @@
+METHODS
+
+Block of memory
+    Syntax:- access-modifier modifier return-type mth-name(formal-args) {
+        // set of instructions
+        // mth block or implementation body or mth body
+    }
+    Access-modifier , modifier(memory modifier) , and formal-args are optional
+    Return-type and mth-name are mandatory
+
+Method Terminology
+    Method Signature
+        Mth name followed by the formal arguments
+    Method Declaration
+        From access modifier to formal arguments is nothing but mth declaration
+    Method Definition
+        Required two things: method declaration and method block(mth implementation/mth body)
+
+Access Modifier
+    Private: 
+    Default: 
+    Protected: 
+    Public: 
+
+Modifier
+    It is a keyword and it tells ue the Behaviour of the mth(characterstics)
+    Static: 
+    Final: 
+    Synchronized: 
+    Volatile: 
+    Transient: 
+
+Return type
+    Used to return the data back to the mth block
+    Two types: void and data-type
+    Void: it is a keyword and it doesn’t return any value to any mth block
+    Data-type: 
+
+User Defined Methods
+    Non-Parameterized methods
+        Mth without arguments, and without return statement
+            Syntax: [access-modifier] [modifier] void mth-name() {}
+        Mth without arguments, but with return statements
+            Syntax: [access-modifier] [modifier] data-type mth-name() { 
+                    return statement; 
+                }
+    Parameterized methods
+        Mth with arguments, but without return statement
+            Syntax: [access-modifier] [modifier] void mth-name(formal args) {}
+        Mth with arguments, and with return statement
+            Syntax: [access-modifier] [modifier] void mth-name(formal args) {
+                    Return statement;
+                }
+    Formal args can have:  datatype var / user-defined class obj / inbuild-class obj
+    Formal args are considered as Local variables
+    mth-name(mth-name() , dt var) {} :- possible to call mth inside mth arguments
+
+
+class Main {
+
+    public static void mth() {
+        int a = 10;     // Scope: entire mth() method
+        {
+            int a = 20;  // ❌ ERROR  // ❌ illegal redeclaration
+        }
+        System.out.println(a);
+    }
+
+    public static void main(String[] args) {
+        mth();
+    }
+}
+Note: Java allows shadowing only for class variables, not local variables.
+class Main {
+    static int a = 10;
+
+    public static void mth() {
+        int a = 20; // allowed (method variable shadows class variable)
+        System.out.println(a);
+    }
+
+    public static void main(String[] args) {
+        mth();
+    }
+}
+
+
+Method Shining
+
+    It is used to call another mth from inside a mth
+
+Method Hiding
+    Method Hiding happens when:
+    A static method in a child class
+
+
+    Has the same name and same signature
+
+
+    As a static method in the parent class
+    In this case, the child’s method hides the parent’s method.
+    Note: Important:
+    Method hiding applies only to static methods, not instance methods.
+    Method hiding occurs when a static method in a subclass has the same signature as a static method in its superclass, and method resolution is done using reference type.
+
+
+
+
+

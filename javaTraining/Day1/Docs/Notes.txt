@@ -1,0 +1,59 @@
+TOKENS
+
+1) keywords :- predefined meaning or compiler known words. these should be in lowercase and we have 50+ keywords in java.
+2) identifiers :- something that can be used to identify any property. the name given by the programmer is known as identifiers. we cannot use keywords as an identifier, cannot use spaces between names, cannot start with a member, special characters are not allowed except _ and $.
+    types :- class name , variable name , method name , package name
+3) literals :- the value or data given by the programmer is known as literals.
+    types :- Number :- integer , floating
+       character :- used to represent a single data. it is enclosed inside single quote. length of character literal is 1. we can use uppercase , lowercase character , digits, and all types of special characters
+      string :- It is used to represent group of characters. it is enclosed inside double quotes. the length can be anything
+      boolean :- it gives us only two values either true or false
+4) separators :- used to separate java members
+  types :- {} -> blocks
+      () -> used to separate equations, methods, declaration, conditions
+      ; -> end of statements
+      , -> variable
+      . -> references
+5) Operators
+
+DATATYPES
+
+1) definition :- used to store data.
+2) Types: -
+ 	Primitive DT :- inbuilt datatypes having fixed size
+      types: byte -> 1byte (8 bits)
+         short   -> 2 byte (16bits)
+         int    -> 4 byte (32bits)
+         long   -> 8 byte (64bits)
+         float   -> 4 byte (32bits)
+         double  -> 8 byte (64bits)
+         char   -> 2 byte (16bits)
+         boolean  -> 1 bit
+   
+    Non-Primitive DT:-
+            Types:  String
+                ClassName
+VARIABLES
+
+1) can be defined based on two types:-
+      1. Based on datatypes :-
+             primitive variables
+             non-primitive variables
+      2. Based on scope :-
+             local variables :- a variable which is declared inside local area is known as local variable. we cannot use local variables without initialization. local variables are not assigned with default values. we cannot create two local variables with same name. local var can be used only inside same local area
+Note:- we can use global variable inside global area as well as local area
+         global variables :- 
+				static variable :- a variable which is declared inside class or global area prefixed with static keyword is known as static variable
+                non-static variable :- a variable which is declared inside class or global area with static keyword is known as non-static KEYWORD
+
+ class ClassName {
+    // class area or global area
+
+    public static void main(String[] args) {
+       // local area
+    }
+ }
+Q. write a java program to calculate area of square whose side is 4.2cm.
+Q. write a program to calculate area of circle whose radius is 5
+Q. write a program to calculate area of rectangle whose length is 3.5 and breath is 4
+Q. write a program to swap two numbers using 3rd variable and without using 3rd variable

@@ -1,0 +1,284 @@
+OPERATORS
+
+1. Unary Operator
+
+    Unary operators work on a single operand.
+
+    Increment Operator
+
+        Pre-Increment: ++var
+        → Increments the value first, then uses it.
+
+        Post-Increment: var++
+        → Uses the value first, then increments it.
+
+    Decrement Operator
+
+        Pre-Decrement: --var
+        → Decrements the value first, then uses it.
+
+        Post-Decrement: var--
+        → Uses the value first, then decrements it.
+
+    Logical NOT Operator
+
+        ! (negates the boolean value)
+
+2. Binary Operator
+
+    Binary operators work on two operands.
+
+    Arithmetic Operators
+
+        + (Addition)
+
+        - (Subtraction)
+
+        * (Multiplication)
+
+        / (Division)
+
+    Relational Operators (Comparison Operators)
+
+        < , > , <= , >= , == , !=
+
+    Logical AND / OR Operators
+
+        && (Logical AND)
+
+        || (Logical OR)
+
+3. Ternary Operator (Conditional Operator)
+
+    Syntax: ? :
+
+    Used as a shorthand for if-else.
+
+INTERVIEW QUESTIONS & ANSWERS
+Q1. Difference between Primitive and Non-Primitive Data Types
+    Primitive Data Types
+
+        Inbuilt data types
+
+        Fixed size
+
+        Store actual values
+
+        Examples: int, float, double, char, boolean
+
+    Non-Primitive Data Types
+
+        User-defined or reference data types
+
+        Size is not fixed
+
+        Store reference/address
+
+        Examples: String, Array, Class, Object
+
+Q2. Difference between Local and Global Variables
+    Local Variables
+
+        Declared inside methods or blocks
+
+        Accessible only within that block
+
+        Must be initialized before use
+
+    Global Variables (Instance / Class Variables)
+
+        Declared inside the class but outside methods
+
+        Accessible throughout the class
+
+        Automatically initialized with default values
+
+Q3. Difference between Compiler and Interpreter
+    Compiler
+
+        Translates entire high-level code into machine code at once
+
+        Generates executable code
+
+        Faster execution after compilation
+
+        Example: C, C++
+
+    Interpreter
+
+        Executes code line by line
+
+        No separate executable file
+
+        Slower execution
+
+        Example: JavaScript, Python
+
+Q4. Difference between Platform Independent and Platform Dependent
+    Platform Independent
+
+        Code can run on any operating system
+
+        Java compiles code into bytecode
+
+        Bytecode runs on any system using JVM
+
+        Example: Java
+
+    Platform Dependent
+
+        Executable code is OS-specific
+
+        Cannot run on other platforms without recompiling
+
+        Example: C, C++
+
+Q5. How does Object-Oriented nature of Java help in software development?
+
+    Provides modularity using classes and objects
+
+    Supports reusability through inheritance
+
+    Improves maintainability and scalability
+
+    Helps in better code organization
+
+Q6. Why is Java considered simpler than C or C++?
+
+    No pointers
+
+    Automatic memory management (Garbage Collection)
+
+    Simple syntax
+
+    No multiple inheritance using classes
+
+Q7. How does Java provide security at runtime?
+
+    Bytecode verification
+
+    JVM security manager
+
+    No direct memory access
+
+    ClassLoader security
+
+Q8. What makes Java a robust language?
+
+    Strong memory management
+
+    Exception handling
+
+    Garbage collection
+
+    Strong type checking
+
+Q9. How does Java achieve high performance?
+
+    Uses Just-In-Time (JIT) Compiler
+
+    Converts bytecode into native machine code at runtime
+
+Q10. What do you mean by portability in Java?
+
+    “Write Once, Run Anywhere”
+
+    Bytecode runs on any system with JVM
+
+Q11. Why does Java have strong industry adoption and job opportunities?
+
+    Platform independent
+
+    Large ecosystem
+
+    Used in web, mobile, enterprise, and backend systems
+
+    Strong community support
+
+OPERATOR RULES (TYPE PROMOTION)
+
+When performing operations on the same data type and storing the result in the same data type:
+
+    DT1	    DT2	    Result
+    byte	byte	CTE
+    short	short	CTE
+    int	    int	    Success
+    float	float	Success
+    double	double	Success
+    long	long	Success
+    char	char	CTE
+    String	String	Concatenation
+    
+ASSIGNMENT OPERATOR
+
+    Assignment happens from right to left
+
+        Operator: =
+
+    Compound Assignment Operators
+
+        (Combination of arithmetic + assignment)
+
+        +=
+
+        -=
+
+        *=
+
+        /=
+
+        %=
+
+RELATIONAL OPERATOR
+
+    Type: Binary operator
+
+    Return type: boolean
+
+    Operates on two operands
+
+    Supported Symbols
+
+        < , > , <= , >= , == , !=
+
+    Rules
+
+    Numeric & char → support all operators
+    Examples:
+
+    'A' > 65
+
+    100.5 <= 101
+
+    190 == 'L'
+
+    97 >= 'a'
+
+    String & boolean → only == and !=
+    Valid:
+
+    "Hello" == "hello"
+
+    true != false
+    Invalid:
+
+    "Str" >= "str"
+
+LOGICAL OPERATOR
+
+    Relational operator is mandatory
+
+    Operates on boolean conditions
+
+    Return type must be boolean
+
+    Types
+
+        Logical AND: &&
+
+        Logical OR: ||
+
+        Logical NOT: !
+
+        Example
+        (a > b) && (c < d)
