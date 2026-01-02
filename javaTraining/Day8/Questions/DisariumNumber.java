@@ -18,7 +18,6 @@ public class DisariumNumber {
             int num = i;
             // calculating the len of the digit
             while(num > 0) {
-                int lastDigit = num % 10;
                 num /= 10;
                 len++;
             }
