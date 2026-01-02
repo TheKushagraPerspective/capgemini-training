@@ -19,6 +19,6 @@ public class ReadEvenIndexElement {
             System.out.println(arr[i]);
         }
 
-        
+        sc.close();
     }
 }
