@@ -1,0 +1,58 @@
+STATIC MEMBER
+
+1) static variable
+    EXP: static int var_name;
+
+2) static method
+    EXP: static return_type mth_name(formal_args) {
+
+    }
+
+3) static initializer (static blocks)
+    EXP: static {
+
+    }
+
+
+JVM ARCHITECTURE
+
+1) Method Area
+
+    Definition and Characterstics: 
+        *) it only contains mth body / mth block / implementation block
+        *) it will contain Static Method body/block
+        *) it will contain Non-Static Method body/block
+        *) it will contain Static Initializer body/block
+        *) it will contain Non-Static Initializer body/block
+        *) to call this jvm needs Reference ID which is present inside the class static Area
+        *) structure: any method or initializer {
+            // this block inside curly-braces will be stored in method area
+        }
+
+2) Class static Area
+
+    Definition and Characterstics: 
+        *) it only contains static members :- like static variable, static method, static initializer 
+        *) structure will be:  class block -> className
+                                        variables
+                                        methods
+                                        initializer
+        *) here we will have only signatures like if we have a method then only method signature will be stored in this like mth-name + formal_args
+        *) it will have Reference Id which will point to mth body that we have in mth area
+
+3) Stack Area
+
+    Definition and Characterstics: 
+        *) it has frames/blocks.
+        *) Execution always starts from this Stack area. bcz it creates frames for static members and after executing each frames, it destroy the frame imidiately. so out main method is nothing but a static member so it comes inside the static area.
+
+4) Heap Area
+
+    Definition and Characterstics: 
+        *) it only contains non-static members :- like non-static variable, non-static method, non-static initializer 
+        *) structure will be:  class block -> address
+                                        variables
+                                        methods
+                                        initializer
+        *) here we will have only signatures like if we have a method then only method signature will be stored in this like mth-name + formal_args
+        *) it will have Reference Id which will point to mth body that we have in mth area
