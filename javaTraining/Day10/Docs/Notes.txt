@@ -1,5 +1,11 @@
++ :- public
+- :- private
+# :- protected
+
+
 STATIC MEMBER
 
+*) it is also called as class members
 1) static variable
     EXP: static int var_name;
 
@@ -56,3 +62,121 @@ JVM ARCHITECTURE
                                         initializer
         *) here we will have only signatures like if we have a method then only method signature will be stored in this like mth-name + formal_args
         *) it will have Reference Id which will point to mth body that we have in mth area
+
+
+Note: we can call instance variable and methods from the class area without using main method, we can use multi-line static initializer to call these members. bcz when class is loaded in the class static area and when stack area starts execution then it will first execute multi-line static initializer before executing main method.
+
+Note: Static members are called as "Single Copied Execution".
+
+
+CLASS
+
+Definition and Characterstics:-
+    *) It is a blue print of object. Multiple objects can be created of the class. We can declare multiple objects with same name and we call it as identical/similar objects. Each object work independentely in a class and if one object gets destroyed then it won't affect the other objects.
+
+OBJECTS
+
+Definition and Characterstics:-
+    *) It is an instance of the class. Anything which is physically present is nothing but objects. Objects have attributes and behaviour, and are set of informations.
+
+
+NON-STATIC MEMBERS
+    Definition and Characterstics:- 
+        *) Any member like variable, method, initializer, and constructor is not prefixed with the keyword Static then all these members are called as non-static members.
+        *) These are also called as instance members.
+
+    *) Instance variables
+    *) methods
+    *) Non-Static initializer
+    *) Constructor
+
+
+Instanciation :- Address for the class.
+Car c1 = new Car(); :- 'new Car()' is nothing but the Anonymous Object and it instanciate the class means it will generate the block of memory inside the heap area.
+                        new keyword is used to generate the unique address/block of memory and that address will be stored in heap area.
+                        when we declare/use new keyword then at that time only it will generate the block of memory in heap area and in that heap area it will have all non-static members.
+                        'new ClassName()' will generate new and unique address will be generate every time.
+                        Car c1 :- is nothing but the object reference and c1 is object reference name. and by the reference name only we call the members multiple times from the class.
+
+
+Note:- Multi-line static initializer will automatically call by the jvm when the class is loaded in class static area and we don't need to call it from main method and first it will execute and then main method will execute but in Multi-line non-static initializer when we craete the object of that class in the main method then after creating the object, MLNSI will be called automatically. first MLNSI will execute and then constructor.
+
+Non-Static variables are also called as :- attributes, fields, data members , instance variable, object variables
+Non-Static methods are also called as :- behaviour, instance of the methods
+
+Q:- what is relative and absolute path?
+
+
+
+CONSTRUCTOR
+
+    *) special method, and similar to methods we have
+    *) present inside the class area.
+    *) the name of the constructor shoule be same as class name
+    *) used to initialized the objects
+    *) doesn't have any return type, doesn't have modifier, but have access-modifier
+
+Three types of constructor:- 
+    1) default constructor
+        *) if user doesn't define any constructor then compiler will create a default constructor.
+        *) it doesn't have any instruction and statement
+        *) it is used to provide the defaults value to instance variables
+    2) parameterised constructor
+        *) user-defined constructor means user/programmer created the constructor.
+        *) the user-defined constructor will have formal_arguments
+    3) non-parameterised constructor
+        *) user-defined constructor means user/programmer created the constructor.
+        *) the user-defined constructor will not have formal_arguments
+
+
+COUPLING
+
+Definition:- how strongly one class  depends on another class
+High dependency :- tight coupling
+Low dependency :- loose coupling
+
+Tight Coupling :- two class are tightly coupled if :-
+                        one class directly dependent on the implementation of the other class
+                        changes in one class force changes in another
+
+Loose Coupling :- two class are loosely coupled if :-
+                        one class does not directly dependent on the implementation of the other class
+                        changes in one class does not affect the changes in another
+
+
+
+RELATIONSHIP
+
+1) HAS - A relationship
+
+    one class contains or uses another class as a part of it.
+
+    *) Association
+        :-) both class uses each other
+        :-) both class objects can exist independentely
+    *) Aggregation
+        :-) one class has another class
+        :-) child class object can exist independentely
+        :-) loose coupling
+        :-) not having blood-relationship
+        :-) flexible
+    *) Composition
+        :-) child class object can't exist independentely
+        :-) lifetime of child class is totally dependent on parent class
+        :-) tight coupling
+        :-) having blood-relationship
+
+2) IS - A relationship
+    *) the relation btw two class objects (parent class and child class) is known as IS - A relationship.
+
+
+Aggregation:- 
+    Dependent class
+        *) 
+    Associated class or Instance of the class
+        *) inside this class we will create dependent class object to use/call the members of the dependent class
+
+
+Bean or JavaBean :- 
+
+

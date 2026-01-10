@@ -1,0 +1,72 @@
+
+Parent Class
+    *) called as Generalized class
+    *) Base class
+    *) Super class
+Child Class
+    *) called as Specialized class
+    *) Derived class
+    *) Sub class
+
+
+Inheritance :- the process of acquiring the properties from one class into another class is known as Inheritance.
+
+5 Types of Inheritance :- 
+    *) Single level Inheritance
+    *) Multi level Inheritance
+    *) Multiple Inheritance
+    *) Hierarchical Inheritance
+    *) Hybrid Inheritance
+
+
+Super Keyword:- *) it is used to access the properties and behaviour of the super class
+                *) it can't access the address of super class 
+                *) to differentiate btw properties of super class and sub class, we use super keyword
+                *) we can use super keyword multiple time in constructor block and in mth block
+Super call statement:- 
+                *) it is used to call/initialize the super class constructor
+                *) it must be the first statement inside the constructor of the sub class
+                *) by default super call statement is there inside the constructor if not defined by the user
+                *) used to call the constructor of the Object class
+                *) if the parent class is having a constructor then it is required to declare the constructor in sub class.
+                *) it should be declared inside the constructor block not in mth block
+                *) only one super call statement is possible inside the constructor blocks
+
+This keyword:- 
+                *) it is used to access the properties of the current class.
+                *) it consist current class address. we can able to get the current class address using this keyword.
+                *) we can use this keyword multiple time in constructor block and in mth block
+This call statement:-
+                *) it should be declared inside the constructor block not in mth block
+                *) only one this call statement is possible inside the constructor blocks
+
+Note:- we cannot use this() call statement and super() call statement together in the same block
+
+
+Multiple Inheritance :-
+    *) java does not allow to perform multiple inheritance because it cause ambiguity and it is nothing but the diamond problem.
+    *) bcz if the name of the properties or behaviour is same in both super class then compiler will confuse like which super class properties or behavious he was asked to call.
+
+
+
+POLYMORPHISM
+
+one object is going to behave in multiple behaviours is known as polymorphism.
+Types:-
+    *) Compiler time polymorphism (static poly / early binding)
+        binding achieved during compile time 
+        *) Overloading
+            *) method Overloading
+            *) constructor Overloading
+            *) public, private, protected, non-static, static, final mths can be overloaded
+
+        *) Shadowing
+            *) to do this, we need to have static var and mth
+            *) variable
+            *) method
+
+    *) Runtime polymorphism (Dynamic poly / late binding)
+        binding achieved during on runtime
+        *) Overriding
+            *) method Overriding
+            *) public, non-static mths can be overridden, but static, privates, and final mths cannot be overridden.

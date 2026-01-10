@@ -16,6 +16,13 @@ Primitive typecasting (Not recommended)
         Syntax :- smaller-primitive-dt varName = (smaller-primitive-dt) higher-primitive-dt-var
         Here we can convert num to character explicitly
 Non-Primitive typecasting (highly recommended)
+    converting from one class into another class is known as non-primitive typecasting
+    two types :- 
+        Upcasting :-
+                converting sub class reference into super class reference type.
+                
+
+        Downcasting
 
 
 
