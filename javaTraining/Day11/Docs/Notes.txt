@@ -70,3 +70,58 @@ Types:-
         *) Overriding
             *) method Overriding
             *) public, non-static mths can be overridden, but static, privates, and final mths cannot be overridden.
+
+Polymorphism:
+
+An object showing different behavior and different status of action is known as polymorphism,
+There are two type of polymorphism:
+1) Compile time polymorphism
+2) Runtime polymorphism
+
+1. Compile Time Polymorphism:
+
+In compile time polymorphism the method declaration is binded to the method definition at compile time by compiler.
+Since the binding is happening at operation time it is known as compile time binding or static binding or early binding,
+for overloaded methods ,static methods and final methods compile time binding happens. 
+
+Method Overloading:
+
+Defining multiple methods in a class with same name and different arguments is known as method overloading.
+This should work either in an argument type or a length of the argument
+
+ In class we can overload both static method and non-static methods
+ The overloaded methods are executed based on the method arguments
+ Method overloading is used to achieved compile time polymorphism
+
+When we go for Method Overloading?
+While develop an application or function if the come cross an operation to be perform with different parameters
+then we go for method overloading.
+
+Constructor Overloading:
+In a class defining multiple constructor with different parameters is known as constructor overloading
+ When defining overloading constructor the constructor should deferent in terms of parameter type or parameter
+length.
+ Constructor overloading help us to create an instance of class to the different initialization.
+ While defining a constructor the constructor name should be same as class name, and constructor should not
+have return type.
+
+
+Runtime polymorphism:
+*In java runtime polymorphism the method declaration is binded to the method definition by the JVM during execution. 
+*Since binding is happening at runtime it is known as dynamic binding or late binding. 
+*To Achieve runtime polymorphism we have to Go with
+  -->Inheritance
+  -->Method overriding
+  -->Non primitive typecasting
+
+Method Overriding:
+-->method overriding We can Achieve runtime polymorphism.
+Inheriting in a method on super class changing in the implementation in sub class is known as method overriding.
+
+-->To override the method inheritance is must.
+-->When sub class overrides the method of the super class then sub class should rewrite the same method signature of the super class, it should change the implementation.
+
+Not possible to Override:
+-->static method is not possible to override.
+-->final non static method is not possible
+-->private non static method is not possible.
