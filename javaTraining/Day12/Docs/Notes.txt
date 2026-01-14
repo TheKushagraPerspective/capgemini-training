@@ -1,0 +1,285 @@
+ABSTRACTION-------------------------------------
+Hiding the Implementation and showing only the necessary details 
+
+How to achieve abstraction 
+    abstract classes, interface ---> Inheritance, Overriding
+    in abstraction extends and implements keyword are mandetory
+
+Terminology:- 
+    Abstract classes
+    Abstract method
+    concrete class
+    concrete methods
+
+    interface
+    abstract method
+    concrete class
+    concrete methods (can be static methods as well as non static methods)
+
+concrete methods are those methods which have method declarartion as well as method implementation 
+concrete methods can be Static as well as non Static 
+
+you cannot achieve 100% abstraction through abstract classes
+
+static methods cannot be abstract methods (abstract methods will always be non static methods) 
+abstract methods with default [AM] becomes public after being overrided inside the (concrete)sub class
+abstract method declaration must end with semi colon (;)
+you must declare the class as abstract to write abstract methods in it
+you can write abstract as well as concrete methods inside abstract class 
+
+you can make a object ref of an abstract class but you cannot instantiate the abstract class (you can't create anonymous object for abstract class) 
+Upcasting is possible (Make obj ref of abstract class and anonymous object of the Sub class)
+
+
+
+
+
+
+(1) 
+abstract class 
+    | extends
+abstract class
+(a) abstract methods are inherited but can't be overriden (from abstract ---> abstract)
+(b) concrete methods are inherited as well as can be overriden (from abstract ---> abstract and abstract to java class also)
+
+Multiple inheritance is not possible with abstract classes
+
+
+INTERFACE---------------------------------------------
+    100% Abstraction is possible with interface
+    We can also achieve Multiple Inheritance
+
+    Syntax:
+
+        interface interfaceName 
+        {
+            (a) abstract [AM] retType MethodName([formal args]) ;
+
+            (b) [AM] retType MethodName([formal args]);
+        }
+
+        (a) we can declare methods with and without abstract keyword
+        (b) We must not provide method implementation inside interface
+        (c) use extends keyword while inheritance between interfaces
+        (d) here in inheritance between interfaces extends can accept more than 1 super interfaces (n no. of super interfaces)
+        (e) we can implement multiple inheritance with interfaces
+
+    Interface with class in inheritance
+        Interface
+            | (implements)
+        class 
+
+
+        Interface
+            |   (extends)
+        Sub Interface
+            |   (implements)
+        Sub class
+
+
+        interface 1     class      interface 2
+        (implements)   (extends)   (implements)
+
+                       Subclass
+        class Subclass extends Class implements interface 1 , interface 2
+
+
+
+                            interface
+        (implements)        (implements)       (extends)
+        subclass 1          subclass 2         interface
+                                                
+
+    Regular interface (any no of abstract methods)
+    Functional (interface can only accept only 1 abstract method) Annotation needed (@functionalinterface)
+    marker ()
+
+Interface do not have initializers as well as constructors
+
+
+
+
+
+
+
+
+
+
+
+Final keyword-----------------------------------------
+
+(1) A final variable cannot be reassigned once it is initialized.
+    Types of final variables
+        (a) Final local variable
+        (b) Final instance variable
+        (c) Final static variable
+    Important points
+
+    Final variables must be initialized exactly once.
+    Initialization can be:
+        (a) At declaration
+        (b) Inside a constructor (for instance variables)
+        (c) Inside a static block (for static variables)
+
+Final methods :- are inherited in sub class, final methods can be overloaded , final methods CANNOT be overridden (for both static as well as non static)
+
+(3) final class CANNOT BE INHERITED :- 
+    In Java, a class declared as final cannot be inherited.
+
+    All methods in a final class are implicitly final. Common use case: immutable classes.
+    
+    When you declare a class using the final keyword, you are explicitly preventing other classes from extending it.
+    The compiler enforces this restriction at compile time.
+
+    One-line memory trick :-
+        Final = No Change
+        Variable → no reassignment
+        Method → no overriding
+        Class → no inheritance
+
+
+priority for class
+(1) interface 
+(2) abstract class
+(3) class 
+(4) final class 
+
+Enumeration ---> used to store fixed data with const keyword, used in SERVER SIDE
+
+User derfined libraries & Inbuild libraries
+
+Inbuild libraries
+    import 
+    java
+    (By default present in classes) lang :- Object , System , String class, buffer builder , Exception , Throwable, Thread, Runnable, Array 
+    io :- File ,  Input Stream, Output Stream , 
+    util :- Collection, Collections, Scanner , Arrays, List , Set , Queue, Map
+    sql :- Driver, DriverManager (helper class), Connection, Statement, Prepared Statement, Callable Statement, Result Set
+    awt :- used in spring boot 
+
+Jakata persistance
+
+Ways to access User File
+    (1) import packageName *; (Access all files)
+    (2) import packageName fileName;
+    (3) packageName.fileName objRef = new packageName.fileName();
+
+
+Top-Level Classes
+A top-level class is a class that is defined directly in a source file, not nested inside another class.
+    Key Characteristics:
+
+        Defined directly in a .java file (not nested)
+        Can only be public or package-private (no modifier)
+        If public, the class name must match the filename
+        Only one public top-level class per file
+
+What are NOT Top-Level Classes?
+Any class defined inside another class is NOT a top-level class:
+
+Classes cannot be declared as private and Protected ( private and protected classes can be instantiated, but only from locations where they're accessible according to their access modifier rules. )
+
+    Why classes in Java cannot be declared private or protected (top-level classes):
+
+    (a) Access control applies to members, not compilation units
+        private and protected are designed to restrict access to class members (fields, methods, constructors). A top-level class itself is a compilation unit and must be accessible to be referenced.
+
+    (b) Top-level classes must be accessible from outside their own scope
+        A top-level class needs to be accessible to other classes (at least within the same package). Declaring it private or protected would make it unusable outside its own source file.
+
+    (c) Java’s visibility model is package-centric for top-level classes
+        For top-level classes, Java allows only:
+
+        public → accessible everywhere
+
+        default (package-private) → accessible within the same package
+        protected has no meaning without inheritance, which applies to members, not top-level classes.
+
+initializers must not have any access modifiers (public , default, private , protected)
+constructor can be default and public , protected , private.
+
+NOTE:- Constructors can be declared as private (Ex. in Singleton class)
+Singleton classes have constructor as private.
+Steps to create constructor as private
+    (1) declare constructor as private
+    (2) create a static helper method
+    (3) the helper method must be public with return type as ClassName
+
+
+Protected members can be accessed outside of package but only through public methods we will call public methods
+Copy Constructor :- two objects storing the same memory address
+
+Library---------------------
+    Object Class:- 
+        (a) it is present in lang package
+        (b) Object class is the super most classes for all user defined as well as Inbuild classes
+        (c) It has 11 non static methods
+            (1) toString() :- ret type String, public , it is used to print current class attributes 
+            (2) equals() :- ret type boolean , public 
+            (3) hashCode() :- ret type int, public 
+            (4) getClass() :- ret type Classname , public  retVal :- packageName.clasName@hexadecimal, to get only className :- use getClass().getName(),  it is used to clear unused objects 
+            (5) clone() :- ret type Object , public
+            (6) finalize() :- void , protected
+
+            Following methods are used in Multithreading concept :-
+                (7) notify() :- void , public it is final
+                (8) notifyAll() :- void , public , it is also Final
+                (9) wait() :- void , public , final
+                (10) wait(long millisec) :- void, public , final
+                (11) wait(int i, long millisec) :- void , public , final
+
+(1) toString() method
+    A a = new A();
+    if you have overrided the toString() method inside the current class 
+    then printing obj ref will call the toString() method implicitly
+
+    class A {
+        @Override 
+        public String toString() {
+            return null;
+        }
+    }
+
+    class Main {
+        p s v m(String []args) {
+            A a = new A();
+            s.o.pln(a); // output-> it will print null (implicit call to toString() method)
+            s.o.pln(a.toString()); // output-> explicit call to toString() method
+        }
+    }
+
+(2) equals() method
+    class Book {
+        String bname;
+        Book(String bname) {
+            this.bname = bname;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            Book b = (Book) obj;
+            return this.bname.equals(b.bname);
+        }
+    }
+
+    Key point: Method belongs to an object, not to the class name
+            equals(Object obj) → your overridden method in Book
+            this.bname.equals(b.bname) → calls String class’s equals() method
+            So you are not calling Book.equals() again.
+
+
+
+
+
+
+
+String Class ----------------------------------------
+    lang package 
+    String class is public , final class 
+    concat(), equals(), trim(), length(), toUppercase(), toLowercase(), charAt() , split() , endswith(), startswith(), replace(), indexOf() , lastIndexOf(), toString(), substring()
+
+
+    (a) Changes in SCP creates a new reference (on updation/modification) so there is wastage of memeoryvvgvgvgvvvvvvvvvg
+    
+    (b) Changes in heap area(non constant pool) do not create a new block of memory evry time updation or
+        modification is done in string , its an advantage of using string object
