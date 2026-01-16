@@ -26,7 +26,7 @@ class Parent implements InterfaceName{
     }
 
     void setA(int a) {
-        super.a = a;
+        // super.a = a;
     }
 }
 
