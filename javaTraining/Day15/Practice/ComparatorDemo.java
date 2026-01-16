@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -61,10 +62,11 @@ public class ComparatorDemo {
 		System.out.println("After Sorting based on empSalary: " + list);
 		
 		
-		
+//		-------------------------------------------------------------------------------------------------
 		
 		IdComparator ic1 = new IdComparator();
 		NameComparator nc1 = new NameComparator();
+		SalaryComparator sc1 = new SalaryComparator();
 		
 		TreeSet<Employee> ts=new TreeSet<Employee>(ic1);
 		
@@ -80,6 +82,27 @@ public class ComparatorDemo {
 		
 		Collections.sort(list2 , nc1);
 		System.out.println(list2);
+		
+		Set<Employee> set2 = new TreeSet<>(sc1);
+		
+//		-------------------------------------------------------------------------------------------------
+		
+		Employee e1 = new Employee(101, "Kushagra", 100000);
+		Employee e2 = new Employee(102, "Harsh", 99000);
+
+		// Using Employee's compareTo()
+		int result1 = e1.compareTo(e2);  
+		// Calls: Employee.compareTo() → returns 101 - 102 = -1
+
+		// Using NameComparator's compare()
+		NameComparator nc = new NameComparator();
+		int result2 = nc.compare(e1, e2);
+		// Flow:
+		// 1. Calls NameComparator.compare(e1, e2)
+		// 2. Gets e1.getName() = "Kushagra"
+		// 3. Gets e2.getName() = "Harsh"
+		// 4. Calls "Kushagra".compareTo("Harsh")  ← String's method
+		// 5. String class compares 'K' and 'H' → K > H → returns positive
 	}
 
 }
