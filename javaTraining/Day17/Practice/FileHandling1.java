@@ -151,38 +151,38 @@ public class FileHandling1 {
         // 6. renameTo() (rename folder (single folder)
         // ------------------------------
 		
-//		File oldDir = new File("C:\\Users\\Kushagra Varshney\\Downloads\\SingleFolder");
-//		File newDir = new File("C:\\Users\\Kushagra Varshney\\Downloads\\NewSingleFolder");
-//		
-//		if(oldDir.exists()) {
-//			if(oldDir.renameTo(newDir)) {
-//				System.out.println("Directory renamed successfully");
-//			}
-//			else {
-//				System.out.println("Directory renamed failed");
-//			}
-//		}
-//		else {
-//			System.out.println("Directory does not exist");
-//		}
-//		
-//		System.out.println();
-//		
-//		File oldDir2 = new File("SingleFolder");
-//		File newDir2 = new File("NewSingleFolder");
-//		
-//		if(oldDir2.exists()) {
-//			if(oldDir2.renameTo(newDir2)) {
-//				System.out.println("Directory renamed successfully");
-//			}
-//			else {
-//				System.out.println("Directory renamed failed");
-//			}
-//		}
-//		else {
-//			System.out.println("Directory does not exist");
-//		}
-//		
+		File oldDir = new File("C:\\Users\\Kushagra Varshney\\Downloads\\SingleFolder");
+		File newDir = new File("C:\\Users\\Kushagra Varshney\\Downloads\\NewSingleFolder");
+		
+		if(oldDir.exists()) {
+			if(oldDir.renameTo(newDir)) {
+				System.out.println("Directory renamed successfully");
+			}
+			else {
+				System.out.println("Directory renamed failed");
+			}
+		}
+		else {
+			System.out.println("Directory does not exist");
+		}
+		
+		System.out.println();
+		
+		File oldDir2 = new File("SingleFolder");
+		File newDir2 = new File("NewSingleFolder");
+		
+		if(oldDir2.exists()) {
+			if(oldDir2.renameTo(newDir2)) {
+				System.out.println("Directory renamed successfully");
+			}
+			else {
+				System.out.println("Directory renamed failed");
+			}
+		}
+		else {
+			System.out.println("Directory does not exist");
+		}
+		
 		System.out.println("---------------------------------------------------------------------------------");
 		
 		
@@ -190,22 +190,23 @@ public class FileHandling1 {
         // 6. renameTo() (rename folder (multi folder)
         // ------------------------------
 		
-//		File oldDir3 = new File("C:\\Users\\Kushagra Varshney\\Downloads\\Parent\\Child\\SubChild");
-//		File newDir3 = new File("C:\\Users\\Kushagra Varshney\\Downloads\\Parent\\Child\\NewSubChild");
-//		
-//		if(oldDir3.exists()) {
-//			if(oldDir3.renameTo(newDir3)) {
-//				System.out.println("Directory renamed successfully");
-//			}
-//			else {
-//				System.out.println("Directory renamed failed");
-//			}
-//		}
-//		else {
-//			System.out.println("Directory does not exist");
-//		}
+		File oldDir3 = new File("C:\\Users\\Kushagra Varshney\\Downloads\\Parent\\Child\\SubChild");
+		File newDir3 = new File("C:\\Users\\Kushagra Varshney\\Downloads\\Parent\\Child\\NewSubChild");
+		
+		if(oldDir3.exists()) {
+			if(oldDir3.renameTo(newDir3)) {
+				System.out.println("Directory renamed successfully");
+			}
+			else {
+				System.out.println("Directory renamed failed");
+			}
+		}
+		else {
+			System.out.println("Directory does not exist");
+		}
 		
 		System.out.println();
+		
 		
 		File oldDir4 = new File("Parent");
 		File newDir4 = new File("NewParent");
