@@ -1,0 +1,352 @@
+# Anonymous Classes in Java – Creation Locations, Rules, and Internals
+
+Author: Kushagra Varshney
+Topic: Where and How Anonymous Classes Can Be Created in Java
+
+---
+
+## 1. Introduction
+
+Anonymous classes are a special type of inner class in Java that:
+
+* Have no name
+* Are created and instantiated at the same time
+* Are mainly used for one-time implementations
+
+A very common doubt is:
+
+> Can anonymous classes be created only in the `main()` method?
+
+Answer:
+
+> ❗ No. Anonymous classes can be created **anywhere in Java** where an object creation is allowed.
+
+This document explains:
+
+* Where anonymous classes can be created
+* Valid and invalid places
+* Rules and restrictions
+* Internal working
+* Interview explanations
+
+---
+
+## 2. Basic Concept of Anonymous Class
+
+Definition:
+
+> An anonymous class is a class without a name that is created at the time of object creation and used only once.
+
+General syntax:
+
+```java
+InterfaceOrClass ref = new InterfaceOrClass() {
+    // method implementations
+};
+```
+
+Important:
+
+* It always creates an **object**
+* It always extends a class or implements an interface
+* It always contains method implementation
+
+---
+
+## 3. Anonymous Class in `main()` Method
+
+This is the most common usage.
+
+```java
+public class Test {
+    public static void main(String[] args) {
+
+        Greeting g = new Greeting() {
+            public void sayHello() {
+                System.out.println("Hello from main");
+            }
+        };
+
+        g.sayHello();
+    }
+}
+```
+
+Explanation:
+
+* Anonymous class is created inside `main()`
+* Object reference stored in `g`
+* Method call resolved at runtime
+
+---
+
+## 4. Anonymous Class inside a Normal Method
+
+Anonymous classes can be created inside **any method**, not only `main()`.
+
+```java
+class Demo {
+
+    void show() {
+        Greeting g = new Greeting() {
+            public void sayHello() {
+                System.out.println("Hello from show method");
+            }
+        };
+
+        g.sayHello();
+    }
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.show();
+    }
+}
+```
+
+Explanation:
+
+* Anonymous class created inside `show()`
+* Lifetime limited to method execution
+
+---
+
+## 5. Anonymous Class inside a Constructor
+
+Anonymous classes can also be created inside constructors.
+
+```java
+class Demo {
+
+    Demo() {
+        Greeting g = new Greeting() {
+            public void sayHello() {
+                System.out.println("Hello from constructor");
+            }
+        };
+
+        g.sayHello();
+    }
+
+    public static void main(String[] args) {
+        new Demo();
+    }
+}
+```
+
+Explanation:
+
+* Created when object is constructed
+* Used during object initialization
+
+---
+
+## 6. Anonymous Class as an Instance Variable (Field Initialization)
+
+Anonymous class can be created while initializing a field.
+
+```java
+class Demo {
+
+    Greeting g = new Greeting() {
+        public void sayHello() {
+            System.out.println("Hello from instance variable");
+        }
+    };
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.g.sayHello();
+    }
+}
+```
+
+Explanation:
+
+* Anonymous class created when `Demo` object is created
+* Stored as a field
+* Accessible using object reference
+
+---
+
+## 7. Anonymous Class inside a Static Block
+
+Anonymous class can be created in static blocks.
+
+```java
+class Demo {
+
+    static {
+        Greeting g = new Greeting() {
+            public void sayHello() {
+                System.out.println("Hello from static block");
+            }
+        };
+
+        g.sayHello();
+    }
+
+    public static void main(String[] args) { }
+}
+```
+
+Explanation:
+
+* Executed when class is loaded
+* Anonymous class created during class loading
+
+---
+
+## 8. Anonymous Class as a Method Parameter (Very Important Case)
+
+Very common in threads, listeners, and callbacks.
+
+### Example with Thread
+
+```java
+public class Test {
+    public static void main(String[] args) {
+
+        Thread t = new Thread(new Runnable() {
+            public void run() {
+                System.out.println("Thread running...");
+            }
+        });
+
+        t.start();
+    }
+}
+```
+
+Explanation:
+
+* Anonymous class created
+* Passed directly as method argument
+* No variable name required
+
+---
+
+## 9. Invalid Places for Anonymous Class
+
+### ❌ At class level without assignment
+
+Invalid code:
+
+```java
+class Demo {
+    new Greeting() {     // ❌ Invalid
+        public void sayHello() { }
+    };
+}
+```
+
+Reason:
+
+* Anonymous class always creates an object
+* Object must be:
+
+  * Assigned to a variable, or
+  * Passed as argument
+
+---
+
+## 10. Rules of Anonymous Class
+
+### Rule 1 — Must use `new`
+
+```java
+new InterfaceOrClass() { ... }
+```
+
+---
+
+### Rule 2 — Must be used where object creation is allowed
+
+Allowed locations:
+
+* Inside main method
+* Inside any method
+* Inside constructor
+* As instance variable
+* Inside static block
+* As method parameter
+
+---
+
+### Rule 3 — No class name, no constructor
+
+Invalid:
+
+```java
+new Greeting() {
+    Greeting() { }   // ❌ Not allowed
+};
+```
+
+Reason:
+
+* Anonymous class has no name
+* So constructor is not possible
+
+---
+
+### Rule 4 — Can extend only one class or implement one interface
+
+Valid:
+
+```java
+new Thread() { ... }
+new Runnable() { ... }
+```
+
+Invalid:
+
+```java
+new ClassA(), InterfaceB { ... }   // ❌ Multiple inheritance not allowed
+```
+
+---
+
+## 11. Lifetime of Anonymous Class Object
+
+* Created at runtime
+* Lives like any normal object
+* Garbage collected when no reference exists
+
+---
+
+## 12. Interview Explanation (Strong Answer)
+
+If asked:
+
+> Can anonymous class be created only in main method?
+
+Answer:
+
+> No. Anonymous classes can be created anywhere in Java where object creation is allowed, such as inside any method, constructor, block, as a field initializer, or as a method argument. The main method has no special role in this.
+
+---
+
+## 13. Comparison: Anonymous Class vs Normal Class
+
+| Feature     | Normal Class  | Anonymous Class  |
+| ----------- | ------------- | ---------------- |
+| Name        | Has name      | No name          |
+| Reusability | Reusable      | One-time use     |
+| File        | Separate file | No separate file |
+| Constructor | Allowed       | Not allowed      |
+| Readability | High          | Lower            |
+
+---
+
+## 14. Final Summary
+
+* Anonymous class is a nameless class created with object
+* It can be created anywhere object creation is allowed
+* It is not restricted to main method
+* It is widely used in threads, listeners, and callbacks
+* Lambda is a simplified form of anonymous class for functional interfaces
+
+---
+
+End of Document

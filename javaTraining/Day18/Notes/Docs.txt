@@ -1,0 +1,335 @@
+# Interface Reference, Anonymous Classes, and Lambda Expressions in Java
+
+Author: Kushagra Varshney
+Topic: How Interface References Call Methods – Anonymous Class & Lambda Internals
+
+---
+
+Given functional interface
+
+@FunctionalInterface
+interface Greeting {
+    void sayHello();
+}
+
+
+
+## 1. Introduction
+
+In Java, interfaces cannot be instantiated directly. Yet, we often see code like:
+
+```java
+
+	Greeting g = new Greeting() { ... };
+	Greeting g2 = () -> { ... };
+	
+```
+
+and then:
+
+```java
+
+	g.sayHello();
+	g2.sayHello();
+	
+```
+
+This raises an important conceptual question:
+
+> If an interface has no object and no method body, how does the interface reference call the method?
+
+This document explains:
+
+* How interface references work
+* How anonymous classes work
+* How lambda expressions work internally
+* How method calls are resolved at runtime
+* Why functional interfaces are required for lambda
+
+---
+
+## 2. Basic Rule: Interface Has No Object
+
+An interface:
+
+* Cannot be instantiated
+* Has no method implementation (except default/static methods)
+* Exists only as a **type** (reference type)
+
+Example (invalid):
+
+```java
+
+	Greeting g = new Greeting();   // ❌ Not allowed
+	
+```
+
+So:
+
+* Interface never creates an object
+* Interface never executes code
+
+Then how does this work?
+
+```java
+
+	Greeting g = ...;
+	g.sayHello();
+
+```
+
+Answer:
+
+> The interface reference never calls the interface method.
+> It always calls the **method of the object** whose reference it holds.
+
+---
+
+## 3. Case 1 – Anonymous Class Implementation
+
+### Code
+
+```java
+
+@FunctionalInterface
+interface Greeting {
+    void sayHello();
+}
+
+public class Lamda1 {
+    public static void main(String[] args) {
+
+        // Traditional anonymous class
+        Greeting g = new Greeting() {
+            @Override
+            public void sayHello() {
+                System.out.println("Hello from Kushagra...");
+            }
+        };
+
+        System.out.println(g);
+        g.sayHello();
+    }
+}
+```
+
+---
+
+### What happens internally?
+
+This line:
+
+```java
+Greeting g = new Greeting() { ... };
+```
+
+creates:
+
+* A new **anonymous class**
+* That class implements `Greeting`
+* That class provides its own implementation of `sayHello()`
+* An object of that anonymous class is created
+* Its reference is stored in `g`
+
+Equivalent expanded version:
+
+```java
+class AnonymousGreetingImpl implements Greeting {
+    public void sayHello() {
+        System.out.println("Hello from Kushagra...");
+    }
+}
+
+Greeting g = new AnonymousGreetingImpl();
+```
+
+Memory picture:
+
+```
+g  --->  [AnonymousGreetingImpl Object]
+                 |
+                 ---> sayHello() implementation
+```
+
+---
+
+### Method Call Resolution
+
+When this runs:
+
+```java
+g.sayHello();
+```
+
+JVM behavior:
+
+* Looks at reference type: `Greeting`
+* Looks at actual object type: `AnonymousGreetingImpl`
+* Calls the **object’s implementation**
+
+This mechanism is called:
+
+> 🔹 Dynamic Method Dispatch (Runtime Polymorphism)
+
+---
+
+## 4. Case 2 – Lambda Expression Implementation
+
+### Code
+
+```java
+// Using lambda expression
+Greeting g2 = () -> { System.out.println("Hello from Kushagra..."); };
+
+System.out.println(g2);
+g2.sayHello();
+```
+
+---
+
+### What lambda really does internally?
+
+At runtime:
+
+* JVM generates a **hidden class**
+* That class implements `Greeting`
+* Implements `sayHello()` using the lambda body
+* Creates an object of that hidden class
+* Stores its reference in `g2`
+
+Equivalent internal meaning:
+
+```java
+class HiddenGreetingImpl implements Greeting {
+    public void sayHello() {
+        System.out.println("Hello from Kushagra...");
+    }
+}
+
+Greeting g2 = new HiddenGreetingImpl();
+```
+
+Memory picture:
+
+```
+g2  --->  [HiddenGreetingImpl Object]
+                  |
+                  ---> sayHello() implementation
+```
+
+So again:
+
+* Interface has no object
+* Object is created from implementation class
+* Interface reference only stores address
+
+---
+
+## 5. Printing the Interface Reference
+
+In code:
+
+```java
+System.out.println(g);
+System.out.println(g2);
+```
+
+Typical output:
+
+```
+Day18.Practice.Lamda1$1@3feba861
+Day18.Practice.Lamda1$$Lambda$1/0x0000000800b00440@6d311334
+```
+
+Explanation:
+
+* `Lamda1$1` → anonymous class
+* `$$Lambda$1` → lambda-generated hidden class
+* `@hashcode` → object identity
+
+This confirms:
+
+* `g` and `g2` store **object references**
+* Not interface
+
+---
+
+## 6. Why Functional Interface Is Required for Lambda
+
+Functional Interface rule:
+
+> Must contain **exactly one abstract method**
+
+Example:
+
+```java
+@FunctionalInterface
+interface Greeting {
+    void sayHello();
+}
+```
+
+Why?
+
+Because lambda provides implementation for **only one method**:
+
+```java
+() -> { ... }
+```
+
+If interface had multiple abstract methods:
+
+* JVM would not know **which method lambda is implementing**
+
+So:
+
+* Lambda works only with functional interfaces
+
+---
+
+## 7. Important Conclusions
+
+### Key truths
+
+* Interface never creates object
+* Interface never executes code
+* Interface reference only stores object address
+* Execution always happens from:
+
+  * Normal class object
+  * Anonymous class object
+  * Lambda-generated hidden class object
+
+---
+
+## 8. Interview Explanation (Strong Answer)
+
+You can explain like this:
+
+> An interface reference does not call interface methods. It holds the reference of a concrete object that implements the interface. At runtime, JVM uses dynamic method dispatch to invoke the actual implementation present in the object, whether it is created using a normal class, anonymous class, or lambda expression. Lambda internally generates a hidden implementation class for the functional interface.
+
+---
+
+## 9. Comparison Table
+
+| Feature                   | Anonymous Class | Lambda Expression              |
+| ------------------------- | --------------- | ------------------------------ |
+| Syntax                    | Long            | Short & clean                  |
+| Class created             | Yes (explicit)  | Yes (hidden)                   |
+| Object created            | Yes             | Yes                            |
+| Supports multiple methods | Yes             | No (only functional interface) |
+| Readability               | Less            | More                           |
+
+---
+
+## 10. Final Summary
+
+* Interface is only a reference type
+* Object is always created from implementation class
+* Anonymous class and lambda both create objects
+* Method call always goes to object’s implementation
+* Lambda is only a shortcut syntax for functional interface implementation
+
+---
+
+End of Document
