@@ -1,8 +1,0 @@
-=== Punjabi Dhaba , Ludhiana ===
-
-Butter Chicken                 Qty:  1   Price: 380.00   Total: 380.00
-Chole Bhature                  Qty:  2   Price: 150.00   Total: 300.00
-Butter Naan                    Qty:  4   Price: 30.00    Total: 120.00
-
-==============================================================
-Grand Total = 800.0

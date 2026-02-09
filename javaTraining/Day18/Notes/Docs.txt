@@ -168,7 +168,7 @@ JVM behavior:
 * Calls the **object’s implementation**
 
 This mechanism is called:
-
+        
 > 🔹 Dynamic Method Dispatch (Runtime Polymorphism)
 
 ---

@@ -1,5 +1,0 @@
-ID   Name     Department   Salary
-101  Dheraj  Manager  46626.05
-102  Kushagra  Developer  50624.05
-103  Manish  Tester  36626.05
-104  Rajeev  Devops  66626.05
