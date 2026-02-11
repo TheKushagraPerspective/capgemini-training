@@ -12,7 +12,7 @@ public class CalculationTest extends TestCase {
 	
 	public void testAdd() {
 		int result = cal1.addition(10 , 5);
-		assertEquals(10 , result);
+		assertEquals(15 , result);
 	}
 	
 	protected void tearDown() {
