@@ -1,0 +1,33 @@
+<hibernate-configuration>
+
+	<session-factory>
+	
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@localhost:1521:XE
+		</property>
+		
+		<property name="hibernate.username">
+			kushagra
+		</property>
+		
+		<property name="hibernate.password">
+			@Kussu321
+		</property>
+		
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+		
+		<property name="hibernate.hbm2ddl.auto">
+			CREATE / INSERT / UPDATE / DELETE
+		</property>
+		
+		<mapping resource="Student.hbm.xml" />
+	
+	</session-factory>
+
+</hibernate-configuration>

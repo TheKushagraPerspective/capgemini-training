@@ -1,0 +1,13 @@
+<hibernate-mapping>
+	
+	<class name="com.capg.model.Student" table="STUDENT">
+		
+		<id name="id" column="ID">
+			<generator class="assigned" />
+		</id>	
+		
+		<property name="name" column="NAME" />
+		<property name="marks" column="MARKS" />
+	
+	</class>
+</hibernate-mapping>
