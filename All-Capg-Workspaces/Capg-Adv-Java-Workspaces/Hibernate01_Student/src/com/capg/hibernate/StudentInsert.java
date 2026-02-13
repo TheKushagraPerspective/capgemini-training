@@ -1,6 +1,10 @@
 package com.capg.hibernate;
 
-import com.capg.model.Student;
+//import org.hibernate.*;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 
 public class StudentInsert {
@@ -16,7 +20,7 @@ public class StudentInsert {
 			
 //			step 1:
 			Configuration cfg = new Configuration();
-			cfg.configure("hibernate.config.xml");
+			cfg.configure("hibernate.cfg.xml");      // loads hibernate.config.xml
 			
 //			step 2:
 			sessionFactory = cfg.buildSessionFactory();
@@ -27,15 +31,17 @@ public class StudentInsert {
 			
 //			step 4:
 			Student stu = new Student();
-			stu.setId(1);
-			stu.setName("Kushagra Varshney");
-			stu.setMarks(88.8);
+			stu.setSno(1);
+			stu.setSname("Kushagra Varshney");
+			stu.setEmail("kushagravarshney.tech@gmail.com");
+			stu.setMobile(9876543210L);
 			
 //			step 5:
 			session.save(stu);
 			
 //			step 6:
 			txn.commit();
+			System.out.println("Record inserted successfully");
 			
 		}
 		catch(Exception e) {

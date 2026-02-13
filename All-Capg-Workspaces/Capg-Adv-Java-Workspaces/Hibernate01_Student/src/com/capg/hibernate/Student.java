@@ -3,9 +3,10 @@ package com.capg.hibernate;
 import java.io.Serializable;
 
 public class Student implements Serializable {
-	private int id;
-	private String name;
-	private double marks;
+	private int sno;
+	private String sname;
+	private String email;
+	private long mobile;
 	
 //	constructor
 	public Student() {
@@ -13,25 +14,37 @@ public class Student implements Serializable {
 	}
 	
 //	setter / getter methods
-	public int getId() {
-		return id;
+
+	public int getSno() {
+		return sno;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setSno(int sno) {
+		this.sno = sno;
 	}
-	
-	public String getName() {
-		return name;
+
+	public String getSname() {
+		return sname;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setSname(String sname) {
+		this.sname = sname;
 	}
-	
-	public double getMarks() {
-		return marks;
+
+	public String getEmail() {
+		return email;
 	}
-	public void setMarks(double marks) {
-		this.marks = marks;
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public long getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(long mobile) {
+		this.mobile = mobile;
 	}
 	
 	

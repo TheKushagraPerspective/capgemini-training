@@ -1,13 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
-	
-	<class name="com.capg.model.Student" table="STUDENT">
-		
-		<id name="id" column="ID">
-			<generator class="assigned" />
-		</id>	
-		
-		<property name="name" column="NAME" />
-		<property name="marks" column="MARKS" />
-	
-	</class>
+    <class name="com.capg.hibernate.Student" table="STUDENT">
+
+        <id name="sno" column="SNO" type="int">
+            <generator class="assigned"/>
+        </id>
+
+        <property name="sname" column="SNAME" type="string" length="25"/>
+        <property name="email" column="EMAIL" type="string" length="50"/>
+        <property name="mobile" column="MOBILE" type="long" length="10"/>
+
+    </class>
 </hibernate-mapping>

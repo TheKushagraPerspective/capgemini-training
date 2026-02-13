@@ -1,6 +1,8 @@
 package com.capg.main;
 
 import com.capg.model.Student;
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
 
 
 public class StudentInsert {
