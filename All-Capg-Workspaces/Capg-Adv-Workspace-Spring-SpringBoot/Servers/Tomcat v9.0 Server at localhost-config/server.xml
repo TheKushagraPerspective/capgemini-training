@@ -162,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="SF06-Spring-MVC-Oracle" path="/SF06-Spring-MVC-Oracle" reloadable="true" source="org.eclipse.jst.jee.server:SF06-Spring-MVC-Oracle"/><Context docBase="SF08-Spring-MVC-Annotations-Ram" path="/SF08-Spring-MVC-Annotations-Ram" reloadable="true" source="org.eclipse.jst.jee.server:SF08-Spring-MVC-Annotations-Ram"/><Context docBase="SF09-Spring-MVC-Annotations-Oracle" path="/SF09-Spring-MVC-Annotations-Oracle" reloadable="true" source="org.eclipse.jst.jee.server:SF09-Spring-MVC-Annotations-Oracle"/></Host>
+      <Context docBase="SF06-Spring-MVC-Oracle" path="/SF06-Spring-MVC-Oracle" reloadable="true" source="org.eclipse.jst.jee.server:SF06-Spring-MVC-Oracle"/><Context docBase="SF08-Spring-MVC-Annotations-Ram" path="/SF08-Spring-MVC-Annotations-Ram" reloadable="true" source="org.eclipse.jst.jee.server:SF08-Spring-MVC-Annotations-Ram"/><Context docBase="SF09-Spring-MVC-Annotations-Oracle" path="/SF09-Spring-MVC-Annotations-Oracle" reloadable="true" source="org.eclipse.jst.jee.server:SF09-Spring-MVC-Annotations-Oracle"/><Context docBase="SF10-SpringMVC-Anno-DataModel" path="/SF10-SpringMVC-Anno-DataModel" reloadable="true" source="org.eclipse.jst.jee.server:SF10-SpringMVC-Anno-DataModel"/><Context docBase="SF11-SpringMVC-Anno-DataModel-2" path="/SF11-SpringMVC-Anno-DataModel-2" reloadable="true" source="org.eclipse.jst.jee.server:SF11-SpringMVC-Anno-DataModel-2"/></Host>
     </Engine>
   </Service>
 </Server>
