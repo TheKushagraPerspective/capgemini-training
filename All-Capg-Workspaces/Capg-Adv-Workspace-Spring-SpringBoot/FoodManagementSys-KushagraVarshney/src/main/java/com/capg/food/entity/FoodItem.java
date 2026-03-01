@@ -1,0 +1,42 @@
+package com.capg.food.entity;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="food_item")
+public class FoodItem {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String itemName;
+    private double price;
+
+    @ManyToOne
+    @JoinColumn(name="category_id")
+    private Category category;
+
+    @ManyToMany(mappedBy="foodItems")
+    private List<FoodOrder> orders;
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getItemName() { return itemName; }
+    public void setItemName(String itemName) { this.itemName = itemName; }
+
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
+
+    public Category getCategory() { return category; }
+    public void setCategory(Category category) { this.category = category; }
+}
