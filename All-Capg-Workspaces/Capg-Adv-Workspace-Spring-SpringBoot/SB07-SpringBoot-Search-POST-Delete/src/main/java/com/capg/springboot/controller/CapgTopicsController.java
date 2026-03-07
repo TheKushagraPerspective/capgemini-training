@@ -30,10 +30,9 @@ public class CapgTopicsController {
 		topicService.addTopic(topic);
 	}
 	//Delete
-	@RequestMapping(method=RequestMethod.DELETE, value="/topics{id}")
-	public void deleteTopic(@RequestBody CapgTopics topic, String id)
-	{
-		topicService.deleteTopic(id);
+	@RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
+	public void deleteTopic(@PathVariable String id) {
+	    topicService.deleteTopic(id);
 	}
 	
 
