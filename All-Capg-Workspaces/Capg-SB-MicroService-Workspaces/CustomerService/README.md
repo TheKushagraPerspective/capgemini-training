@@ -2,122 +2,289 @@
 
 ## Overview
 
-Customer Service is a **Spring Boot microservice** responsible for handling customer-related operations.
-It registers with **Eureka Server** and can be accessed through the **Gateway Service**.
+Customer Service is a **Spring Boot Microservice** responsible for managing customer information.
+
+This service performs **CRUD operations** on customer data using **JPA with EntityManager** and connects to a **MySQL database**.
+
+The service registers itself with the **Eureka Server** and can be accessed through the **API Gateway**.
 
 ---
 
 ## Tech Stack
 
-* Java 17
-* Spring Boot
-* Spring Cloud Eureka Client
-* REST API
+- Java 17  
+- Spring Boot 3  
+- Spring Cloud Eureka Client  
+- Spring Data JPA  
+- Hibernate  
+- MySQL  
+- REST API  
 
 ---
 
-## Project Setup
+## Project Structure
 
-### 1. Create Spring Boot Project
-
-Dependencies required:
-
-* Spring Web
-* Eureka Discovery Client
+```
+CustomerService
+│
+├── controller
+│     └── CustomerServiceController.java
+│
+├── service
+│     └── CustomerService.java
+│
+├── dao
+│     └── CustomerDAO.java
+│
+├── entity
+│     └── Customer.java
+│
+└── CustomerServiceApplication.java
+```
 
 ---
 
-### 2. Main Application Class
+## Entity
+
+Customer entity represents customer details stored in the database.
 
 ```java
-@SpringBootApplication
-public class CustomerServiceApplication {
+@Entity
+@Table(name = "customer")
+public class Customer {
 
-    public static void main(String[] args) {
-        SpringApplication.run(CustomerServiceApplication.class, args);
-    }
+    @Id
+    private int id;
+
+    private String name;
+    private String email;
+    private long phone;
 
 }
 ```
 
 ---
 
-### 3. Configuration (`application.yml`)
+## DAO Layer
 
-Location:
+The DAO layer uses **EntityManager** to perform database operations.
 
-```
-src/main/resources
-```
+```java
+@Repository
+@Transactional
+public class CustomerDAO {
 
-```yaml
-spring:
-  application:
-    name: CUSTOMER-SERVICE
+    @PersistenceContext
+    private EntityManager em;
 
-server:
-  port: 9002
+    public Customer save(Customer customer) {
+        return em.merge(customer);
+    }
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+    public List<Customer> findAll() {
+        return em.createQuery("FROM Customer", Customer.class).getResultList();
+    }
+
+    public Customer findById(int id) {
+        return em.find(Customer.class, id);
+    }
+
+    public boolean deleteById(int id) {
+        Customer customer = em.find(Customer.class, id);
+        if(customer != null) {
+            em.remove(customer);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
 ```
 
 ---
 
-### 4. Sample Controller
+## Controller
+
+Base URL
+
+```
+/customer
+```
+
+Example controller:
 
 ```java
 @RestController
 @RequestMapping("/customer")
-public class CustomerController {
+public class CustomerServiceController {
 
-    @GetMapping
-    public String getCustomerDetails() {
-        return "Customer Service Running";
+    @GetMapping("/getall")
+    public List<Customer> getAllCustomer() {
+        return service.getAllCustomer();
     }
 
 }
+```
+
+---
+
+## Configuration
+
+### application.properties
+
+```
+spring.application.name=CUSTOMER-SERVICE
+server.port=9002
+
+eureka.instance.prefer-ip-address=true
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+
+spring.datasource.url=jdbc:mysql://localhost:3306/capgdb1
+spring.datasource.username=root
+spring.datasource.password=*****
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 ```
 
 ---
 
 ## Running the Service
 
-1. Start **Eureka Server**
-2. Run **Customer Service**
+### Step 1
 
----
-
-## Verify Service Registration
-
-Open:
+Start **Eureka Server**
 
 ```
 http://localhost:8761
 ```
 
-Check if:
+---
+
+### Step 2
+
+Run **CustomerServiceApplication**
+
+The service will start on
+
+```
+http://localhost:9002
+```
+
+---
+
+## API Endpoints
+
+### Get All Customers
+
+```
+GET
+http://localhost:9002/customer/getall
+```
+
+---
+
+### Get Customer by ID
+
+```
+GET
+http://localhost:9002/customer/{id}
+```
+
+Example
+
+```
+http://localhost:9002/customer/1
+```
+
+---
+
+### Add Customer
+
+```
+POST
+http://localhost:9002/customer/add
+```
+
+JSON Body
+
+```json
+{
+"id":1,
+"name":"Kushagra",
+"email":"kushagra@gmail.com",
+"phone":9876543210
+}
+```
+
+---
+
+### Delete Customer
+
+```
+DELETE
+http://localhost:9002/customer/delete/{id}
+```
+
+Example
+
+```
+http://localhost:9002/customer/delete/1
+```
+
+---
+
+## Access Through Gateway
+
+If the **Gateway Service** is running:
+
+```
+http://localhost:8989/customer/**
+```
+
+Example
+
+```
+http://localhost:8989/customer/getall
+```
+
+---
+
+## Service Registration
+
+Open Eureka Dashboard:
+
+```
+http://localhost:8761
+```
+
+You should see:
 
 ```
 CUSTOMER-SERVICE
 ```
 
-is registered.
-
 ---
 
-## Test API
+## Database
 
-### Direct Access
-
-```
-http://localhost:9002/customer
-```
-
-### Through Gateway
+Database used:
 
 ```
-http://localhost:8989/customer
+MySQL
 ```
+
+Database name:
+
+```
+capgdb1
+```
+
+Table created automatically:
+
+```
+customer
+```
+
+---
