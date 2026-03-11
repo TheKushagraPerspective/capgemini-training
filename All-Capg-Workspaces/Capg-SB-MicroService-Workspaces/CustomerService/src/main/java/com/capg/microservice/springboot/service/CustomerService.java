@@ -26,6 +26,10 @@ public class CustomerService {
 		return dao.findById(id);
 	}
 	
+	public Customer updateCustomer(int id , Customer customer) {
+		return dao.updateById(id , customer);
+	}
+	
 	public boolean deleteCustomerById(int id) {
 		return dao.deleteById(id);
 	}
