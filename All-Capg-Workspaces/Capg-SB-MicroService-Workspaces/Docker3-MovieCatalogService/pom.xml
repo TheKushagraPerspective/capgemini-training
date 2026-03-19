@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.capg.springboot</groupId>
-	<artifactId>Docker2-MovieCatalogService</artifactId>
+	<artifactId>Docker3-MovieCatalogService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>Docker1-MovieCatalogService</name>
+	<name>Docker3-MovieCatalogService</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
