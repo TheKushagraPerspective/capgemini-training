@@ -1,0 +1,28 @@
+services:
+
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-database2
+    ports:
+      - "1522:1521"
+    environment:
+      ORACLE_PASSWORD: "@Kussu321"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+  employee-address:
+    build: ./DEmp2-EmployeeAddress
+    ports:
+      - "9002:9002"
+    depends_on:
+      - oracle-db
+
+  employee-service:
+    build: ./DEmp1-EmployeeService
+    ports:
+      - "9001:9001"
+    depends_on:
+      - oracle-db
+
+volumes:
+  oracle-data:
