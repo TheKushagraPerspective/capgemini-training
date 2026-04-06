@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            display: inline;
+            /* cannot apply width and height to inline elements */
+            /* width: 100px;
+            height: 100px; */
+        }
+
+        span {
+            display: block;
+            /* now we can apply width and height to this block elements */
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+        }
+
+        h2 {
+            display: inline-block;
+            /* now we can apply width and height to this inline-block elements */
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>this is heading1 tag</h1>
+    <h1>this is heading1 tag</h1>
+    <h1>this is heading1 tag</h1>
+
+    <span>this is span tag</span>
+    <span>this is span tag</span>
+    <span>this is span tag</span>
+    
+    <h2>this is heading2 tag</h2>
+    <h2>this is heading2 tag</h2>
+    <h2>this is heading2 tag</h2>
+
+    
+</body>
+</html>
