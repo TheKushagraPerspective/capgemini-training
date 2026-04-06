@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applicant Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        fieldset {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        input, textarea, select {
+            padding: 5px;
+        }
+
+        .skills label {
+            width: auto;
+            margin-right: 15px;
+        }
+
+        .buttons {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <fieldset>
+            <legend><h2>Applicant Details</h2></legend>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text">
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email">
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender:</label><br>
+                Male <input type="radio" name="gender">
+                Female <input type="radio" name="gender">
+            </div>
+
+            <!-- Contact -->
+            <div class="form-group">
+                <label>Contact:</label>
+                <input type="text">
+            </div>
+
+            <!-- File Upload -->
+            <div class="form-group">
+                <label>Qualification:</label>
+                <input type="file" accept="application/pdf">
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+                <label>Joining Date:</label>
+                <input type="date">
+            </div>
+
+            <!-- Skills -->
+            <div class="form-group skills">
+                <label>Skills:</label><br>
+
+                <input type="checkbox"> JavaScript
+                <input type="checkbox"> Java <br><br>
+
+                <input type="checkbox"> React
+                <input type="checkbox"> Express <br><br>
+
+                <input type="checkbox"> Python
+                <input type="checkbox"> SQL
+            </div>
+
+            <!-- Range -->
+            <div class="form-group">
+                <label>Year of Experience:</label>
+                <input type="range">
+            </div>
+
+            <!-- Dropdown -->
+            <div class="form-group">
+                <label>Work Location:</label>
+                <select>
+                    <option>--Default--</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Bangalore</option>
+                </select>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label>Address:</label>
+                <textarea rows="3" cols="25"></textarea>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+
+        </fieldset>
+    </form>
+
+</body>
+</html>

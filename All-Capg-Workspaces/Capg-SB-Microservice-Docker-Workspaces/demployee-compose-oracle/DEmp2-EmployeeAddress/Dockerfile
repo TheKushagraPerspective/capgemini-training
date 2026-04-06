@@ -1,6 +1,14 @@
-FROM eclipse-temurin:17-jdk
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 ENV TZ=UTC
 WORKDIR /app
-COPY target/*.jar app.jar
-EXPOSE 9002
-ENTRYPOINT ["java","-jar","app.jar"]
+COPY pom.xml .
+RUN mvn dependency:go-offline -q
+COPY src ./src
+RUN mvn clean package -DskipTests -q
+
+FROM eclipse-temurin:17-jre
+ENV TZ=UTC
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
+EXPOSE 8761
+ENTRYPOINT ["java", "-jar", "app.jar"]

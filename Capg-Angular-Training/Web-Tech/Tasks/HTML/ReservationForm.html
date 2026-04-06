@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        form {
+            width: 50%;
+            margin: 30px auto;   /* centers horizontally */
+        }
+
+        fieldset {
+            padding: 20px;
+        }
+
+        /* Form alignment */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, textarea {
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        .name-inputs input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .date-inputs {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div><b>Lonely Planet</b></div>
+
+        <div class="nav-links">
+            <a href="#">DESTINATIONS</a>
+            <a href="#">BOOKs</a>
+            <a href="#">TRIPS</a>
+            <a href="#">STORIES</a>
+        </div>
+
+        <input type="text" placeholder="search">
+    </div>
+
+    <form action="#">
+        <fieldset>
+            <legend>Reservation Information Form</legend>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label><b>NAME:*</b></label><br>
+                <div class="name-inputs">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label><b>Phone Number:*</b></label><br>
+                <input type="text" placeholder="Ex-1234567890">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label><b>Email:*</b></label><br>
+                <input type="email" placeholder="Enter Mail">
+            </div>
+
+            <!-- Dates -->
+            <div class="form-group">
+                <div class="date-inputs">
+                    <label><b>Check Date:*</b></label><br>
+                    <input type="date">
+
+                    <label style="margin-left:20px;"><b>Check Out Date:*</b></label><br>
+                    <input type="date">
+                </div>
+            </div>
+
+            <!-- Requirements -->
+            <div class="form-group">
+                <label><b>Special Requirements:</b></label><br>
+                <textarea rows="3" cols="30"></textarea>
+            </div>
+
+            <!-- Button -->
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    
+</body>
+</html>

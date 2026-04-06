@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combinator Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Biryani section */
+        .biryani > ul > li {
+            color: orange;
+        }
+
+        .biryani ul ul li {
+            color: black;
+        }
+
+        .biryani > ul > li:last-child {
+            color: teal;
+        }
+
+        /* Fighter Jet section */
+        .fighter > ul > li {
+            color: orange;
+        }
+
+        /* Lassi section */
+        .lassi > ul > li {
+            color: green;
+        }
+
+        .lassi ul ul li {
+            color: brown;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Biryani -->
+    <div class="biryani">
+        <h1>Ingredients for Biryani</h1>
+        <ul>
+            <li>Rice</li>
+            <li>Chicken
+                <ul>
+                    <li>Fried</li>
+                    <li>Grilled</li>
+                    <li>Roasted</li>
+                </ul>
+            </li>
+            <li>Paneer</li>
+        </ul>
+    </div>
+
+    <!-- Fighter Jet -->
+    <div class="fighter">
+        <h1>Fighter Jet</h1>
+        <ul>
+            <li>Spices</li>
+            <li>Gas/Electric</li>
+        </ul>
+    </div>
+
+    <!-- Lassi -->
+    <div class="lassi">
+        <h1>Ingredients for Lassi</h1>
+        <ul>
+            <li>Curd</li>
+            <li>Water</li>
+            <li>Sugar
+                <ul>
+                    <li>White Sugar</li>
+                    <li>Brown Sugar</li>
+                </ul>
+            </li>
+            <li>Malai</li>
+            <li>Kova</li>
+        </ul>
+    </div>
+
+</body>
+</html>
