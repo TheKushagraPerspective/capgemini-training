@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector</title>
+
+    <style>
+        input[type] {
+            border: 2px solid black;
+        }
+
+        input[type="text"] {
+            background: yellow;
+        }
+
+        a[href ^= "https"] {
+            color: green;
+        }
+
+        a[href $= ".pdf"] {
+            color: rgb(108, 108, 244);
+        }
+
+        a[href *= "google"] {
+            background: rgb(215, 83, 215);
+        }
+
+        /* Word match */
+        p[class~="highlight"] {
+            color: purple;
+        }
+
+        /* Prefix match */
+        p[lang|="en"] {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" placeholder="Text input">
+    <input type="password" placeholder="Password">
+
+    <br><br>
+
+    <a href="https://google.com">Google</a><br>
+    <a href="file.pdf">PDF File</a><br>
+
+    <p class="text highlight">Highlighted text</p>
+    <p lang="en-US">English paragraph</p>
+    
+</body>
+</html>
