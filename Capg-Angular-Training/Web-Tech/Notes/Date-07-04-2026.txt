@@ -1,0 +1,32 @@
+flexbox properties (for 1 dimentional layout)
+
+flex-box (properties for parent section where we will use disokay:flex)
+1. display: flex
+2. justify-content: start , end , center , space-evenly, space-aroung, space-between
+3. justify:items :
+4. align-items: start , end , center
+5. flex-direction: row, column, row-reverse, column-reverse
+6. flex-wrap:
+7: align-content: (can only be used after flex-wrap is used) 
+
+
+flex item (properties for child section where flex properties are going to apply)
+1. flex-basis: 
+2. flex-grow: 
+3. flex-shrink: 
+4. order
+
+
+Grid properties (for 2 dimentional layout)
+display: Grid
+grid-template-columns
+grid-template-rows
+justify-content
+place-content
+grid-item
+grid-column-start
+grid-column-end
+grid-column-start
+grid-column-start
+grid-column: 1/3
+grid-row: 1/3

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Properties</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main {
+            width: 70vw;
+            height: 80vh;
+            margin: 50px auto;
+            border: 2px solid;
+
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* flex-direction: column; */
+            /* gap: 10px; */
+            /* flex-wrap: wrap-reverse; */
+            /* align-content: start; */
+            flex-direction: row-reverse;
+            flex-wrap: wrap-reverse;
+            align-content:center;
+            row-gap: 10px;
+            justify-content: space-around;
+        }
+
+        section {
+            width: 18%;
+            height: 18%;
+            border: 1px solid red;
+        }
+
+        .container {
+            width: 70vw;
+            height: 80vh;
+            margin: 50px auto;
+            border: 2px solid;
+
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-content: start;
+        }
+
+        .box7 {
+            order: -3;
+        }
+        .box5 {
+            order: -2;
+        }
+        .box1 {
+            order: -1;
+        }
+        .box2 {
+            order: 0;
+        }
+        .box4 {
+            order: 1;
+        }
+        .box3 {
+            order: 2;
+        }
+        .box6 {
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>FlexBox Implementation</h1>
+
+
+    <main>
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+        <section>4</section>
+        <section>5</section>
+        <section>6</section>
+        <section>7</section>
+        <section>8</section>
+        <section>9</section>
+        <section>10</section>
+    </main>
+
+    <div class="container">
+        <section class="box box1">1</section>
+        <section class="box box2">2</section>
+        <section class="box box3">3</section>
+        <section class="box box4">4</section>
+        <section class="box box5">5</section>
+        <section class="box box6">6</section>
+        <section class="box box7">7</section>
+    </div>
+    
+</body>
+</html>
