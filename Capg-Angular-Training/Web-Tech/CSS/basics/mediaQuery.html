@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            height: 80vh;
+            width: 70vw;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid;
+        }
+
+        .box {
+            width: 25%;
+            height: 25%;
+            border: 1px solid;
+            background-color: darkturquoise;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) and (min-width: 300px) {
+            main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="box box1">1</section>
+        <section class="box box2">2</section>
+        <section class="box box3">3</section>
+    </main>
+    
+</body>
+</html>
