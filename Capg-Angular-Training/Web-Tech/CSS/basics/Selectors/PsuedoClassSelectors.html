@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psuedo Class Selectors</title>
+
+    <style>
+        
+        button:hover {
+            background-color: yellow;
+        }
+
+        button:active {
+            color: red;
+        }
+
+        input:focus {
+            
+            /* background-color: red; */
+            border: 2px solid rgb(114, 8, 8);
+        }
+
+        a:link {
+            color: green;
+        }
+        a:visited {
+            color: red;
+        }
+
+        li:first-child {
+            color: red;
+        }
+
+        li:last-child {
+            color: blue;
+        }
+
+        li:nth-child(2) {
+            background-color: yellow;
+        }
+
+        /* will not apply bcz h1 is not first child, it is second/last child */
+        h1:first-child {
+            color: yellow;
+        }
+
+        /* will not apply bcz p is not second child, it is first and third child */
+        p:nth-child(2) {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <button>Click Me</button><br><br>
+
+    <input type="text" placeholder="Click me"><br><br>
+
+     <a href="https://www.google.com">Google</a>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <div>
+        <p>Para</p>
+        <h1>Heading</h1>
+    </div>
+
+
+    <div>
+        <p>A</p>
+        <h2>B</h2>
+        <p>C</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator Selectors</title>
+
+    <style>
+         /* Descendant selectors  */
+        div p {
+            color: red;
+        }
+
+        /* Child Selector */
+        div > span {
+            color: blue;
+        }
+
+        /* Adjacent */
+        h2 + p {
+            background-color: yellow;
+        }
+
+        /* General sibling */
+        h3 ~ p {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- <div>
+        <p>Level 1</p>
+        
+        <section>
+            <p>Level 2</p>
+            
+            <div>
+                <p>Level 3</p>
+            </div>
+        </section>
+    </div>
+
+
+    <h1>Heading</h1>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p> -->
+
+    <!-- in below this case, p is not direct sibling of h1 so h1 + p styling will be not applicable here -->
+    <!-- <h1>Heading</h1>
+    <div>Something</div>
+    <p>Paragraph</p> -->
+
+    <!-- in below this case, p is not direct sibling of h1 so h1 + p styling will be not applicable here -->
+    <!-- <div>
+        <h1>Heading</h1>
+    </div>
+
+    <p>Paragraph</p>
+
+
+    <h2>Heading</h2>
+    <p>P1</p>
+    <p>P2</p>
+    <p>P3</p> -->
+
+
+    <div>
+        <p>Descendant (Red)</p>
+
+        <section>
+            <p>Nested Descendant (Red)</p>
+        </section>
+
+        <span>Direct Child (Blue)</span>
+    </div>
+
+    <h2>Heading</h2>
+    <p>Adjacent (Yellow)</p>
+    <p>Not Adjacent</p>
+
+    <h3>Heading 3</h3>
+    <p>Sibling 1 (Border)</p>
+    <p>Sibling 2 (Border)</p>
+    
+</body>
+</html>

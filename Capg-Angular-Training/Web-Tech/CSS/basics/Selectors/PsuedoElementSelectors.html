@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psuedo Class Selectors</title>
+
+    <style>
+        /* ::before and ::after are inline */
+        h5::before {
+            content: "";
+            display: block;
+            height: 5px;
+            background: red;
+        }
+
+        .hello::before {
+            /* content: "👉 "; */
+            content: "🔥 ";
+            background-color: red;
+            font-size: 20px;
+        }
+
+        .hello::after {
+            content: " ✔";
+        }
+
+        .letter::first-letter {
+            color: red;
+            font-size: 2rem;
+        }
+
+        /* will not work, bcz first letter will work only on block level elements */
+        .span::first-letter {
+            color: red;
+            font-size: 2rem;
+        }
+
+        .paragraph::first-line {
+            color: red;
+        }
+
+        .paragraph::selection {
+            background-color: yellow;
+            color: darkgreen;
+        }
+
+        /* marker works only on li */
+        li::marker {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h5>
+        Sample Paragraph
+    </h5>
+
+    <p class="hello">hello</p>
+
+    <p class="letter">
+        This is the Sample paragraph
+    </p>
+
+    <span class="span">
+        This is the Sample span
+    </span>
+
+
+    <pre class="paragraph">
+        first line
+        second line
+        third line
+    </pre>
+
+    <ol type="1">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ol>
+    
+</body>
+</html>
