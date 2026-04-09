@@ -1,1 +1,17 @@
 *.zip
+
+# Eclipse
+.metadata/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Node
+node_modules/
+
+# Temp
+*.tmp
+*.cache
