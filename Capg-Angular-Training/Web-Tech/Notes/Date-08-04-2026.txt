@@ -1,0 +1,67 @@
+JavaScript Invention: in 1995, brandon eich built MOCHA in 10 days then build LiveScript in sep 1995 then from there javaScript was built in oct 1995, and then it handover to ECMA (Europian Computer Manufacturing Association) organisation in 1996
+
+in 1997, ES1 js version came into the picture then ES2 ... ES6(standard version of js) in 2015, latest version is ECMAScript ES16 in 2025
+
+JS:- high level object based programming language
+Features of JS:-
+Scripting language
+Synchronous in nature
+Interpreted language
+Single threaded language
+dynamic language
+loosly/weekly typed language
+object based
+client-side Scripting language
+
+
+Advantages of JS:-
+high community support
+simple to understand(light weight)
+slow
+
+Disadvantages of JS:-
+not secure
+XSS-attack
+
+
+RunTime Environment
+1. Browser RunTime Environment
+    :- ways to use js
+    1. inline js
+    2. internal js
+    3. external js
+2. Non Browser RunTime Environment
+    :- to use this, we need node js
+
+
+rendering engine vs javascript engine
+Key Differences
+Feature 	    Rendering Engine (Layout Engine)	                                JavaScript Engine
+Primary Goal	Transforms HTML and CSS into a visual representation on the screen.	Parses and executes JavaScript code to make the page interactive.
+Inputs	        HTML documents, CSS files, images, and XML.	                        JavaScript code (.js) and WebAssembly.
+Core Output	    The Document Object Model (DOM), Render Tree, and visual pixels.	Executed machine code or manipulation of the DOM via APIs.
+Independence	Tightly coupled with the browser; rarely used outside of one.	    Can run independently of a browser (e.g., Node.js).
+
+JavaScriptEngine :- 
+parser :- first the code will be converted in chunks and then parse the chunks into AST format (Abstract Syntax Tree) tree like structure
+then these chunks goes to interpreter then code is converted to bytecode (the code which is neither understandable by humans nor machine)
+and JIT(just in time) compiler is also there so after interpreter, the code will go to JIt which is having profiler
+this profiler will find the hot code(the code which is repeating again and again like loop/function) and that code will be optimized by the JIT compiler
+
+rendering and js engine for some browser
+browser             Rendering Engine        JS Engine
+Google                                      V8
+Chrome                                      V8
+Internet Explorer                           ChakraCorex
+Safari                                      JavaScriptCore
+Firefox                                     SpiderMonkey
+Edge                                        ChakraCorex
+Brave                                       V8
+Mozilla                                     Rhino
+
+
+short circuiting:- in logical operator, like in AND (&&) condition if any value if false then it will not check the remaining values simply will return false and in OR (||) condition if any value if true then it will not check the remaining values simply will return true
+
+
+Hoisting :- utilizing the variable before the declaration and initialization
+tamporal dead zone (TDZ) :- this is the time gap btw variable utilization and variable declaration/initialization
