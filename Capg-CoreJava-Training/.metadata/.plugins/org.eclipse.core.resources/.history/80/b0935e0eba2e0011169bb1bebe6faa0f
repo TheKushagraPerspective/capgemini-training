@@ -1,0 +1,7 @@
+package com.capg.set;
+
+public class SetDemo {
+	public static void main(String[] arg) {
+		
+	}
+}
