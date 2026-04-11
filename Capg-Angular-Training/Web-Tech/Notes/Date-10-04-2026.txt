@@ -1,0 +1,17 @@
+Objects:- real world entity, exist in key:value pairs
+Object properties/methods:-
+1. key
+2. value
+3. entries
+4. seal    :- we can't add or remove the new or existing property but we can modify the existing property.
+5. isSealed
+6. freeze  :- we can't add or remove or modify the new or existing property.
+7. isFrozen
+
+
+JSON :- the standard for the data interchange
+normal object to json :- stringify method
+json to normal object :- parse method
+
+Asynchronous IavaScript :- 
+timing statements :- setTimeout , setTimeInterval

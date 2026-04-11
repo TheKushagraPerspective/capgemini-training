@@ -1,0 +1,4 @@
+Promise
+it is nothing but the object which tells eventual complition of any asynchronous task
+states of promise :- resolved , rejected , pending , settled
+settled :- promise execution is done whether resolved or rejected.

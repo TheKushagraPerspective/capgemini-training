@@ -17,7 +17,7 @@ client-side Scripting language
 Advantages of JS:-
 high community support
 simple to understand(light weight)
-slow
+fast
 
 Disadvantages of JS:-
 not secure
