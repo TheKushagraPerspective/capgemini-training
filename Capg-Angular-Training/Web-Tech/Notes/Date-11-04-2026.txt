@@ -1,4 +1,39 @@
-Promise
+Promise :- In JavaScript, a Promise is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value. It acts as a placeholder for a value that is not necessarily known at the time of creation. 
+
+
+Core Purpose and Uses :-
+Managing Asynchronicity: They handle operations that take time, such as fetching data from an API, loading files, or database queries, without freezing the user interface.
+Avoiding "Callback Hell": Promises provide a cleaner, more readable alternative to deeply nested callbacks (the "pyramid of doom"), making code easier to maintain.
+Standardized Error Handling: They offer a structured way to catch errors using .catch(), ensuring that failures in any part of an asynchronous chain are handled in one place.
+Chaining Operations: You can perform multiple asynchronous tasks in a specific sequence using .then(), where each step waits for the previous one to finish.
+Parallel Execution: Tools like Promise.all() allow you to run multiple asynchronous tasks simultaneously and wait for all of them to complete.
+
+
+The Three States of a Promise
+A Promise is always in one of these three states:
+Pending: The initial state; the operation has started but is not yet complete.
+Fulfilled (Resolved): The operation completed successfully, and a result value is available.
+Rejected: The operation failed, and a reason (typically an error) is available. 
+
+Key Methods for Consumption
+.then(): Attaches a handler for a successful result.
+.catch(): Attaches a handler for when the promise is rejected.
+.finally(): Executes code regardless of the outcome, often used for cleanup like hiding a loading spinner. 
+
+
 it is nothing but the object which tells eventual complition of any asynchronous task
 states of promise :- resolved , rejected , pending , settled
 settled :- promise execution is done whether resolved or rejected.
+
+methods:-
+1. .then([callback]) {
+    // when promise is in resolved state then it will execute
+}
+
+2. .catch([callback]) {
+    // run when promise is in rejected state
+}
+
+3. finally([callback]) {
+    now matter in what state it is, it will execute everytime
+}

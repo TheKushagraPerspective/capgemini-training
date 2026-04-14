@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        body.light {
+            background-color: white;
+            color: black;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 30px;
+            background-color: rgb(51, 42, 42);
+        }
+
+        body.light nav {
+            background-color: lightgray;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            flex: 1;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 16px;
+        }
+
+        #toggleBtn {
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            width: 180px;
+            background-color: dimgray;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        body.light .card {
+            background-color: rgb(45, 39, 39);
+            border: 1px solid lightgray;
+            color: white;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .card p {
+            margin-top: 8px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+        <i class="fa-solid fa-moon" id="toggleBtn"></i>
+    </nav>
+
+    <div id="products"></div>
+
+    <script src="./singlePage.js"></script>
+</body>
+</html>

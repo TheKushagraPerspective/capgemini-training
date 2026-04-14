@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pefume Task</title>
+    <!-- <link rel="stylesheet" href="perfumeTask.css"> -->
+
+    <style>
+        body{
+            background-color: bisque;
+        }
+
+        .container{
+            margin : 100px;
+            margin-left: 400px;
+            border: 2px solid black;
+            display:flex;
+            justify-content: center;
+            height:70vh;
+            width : 45%;
+            border-radius: 20px;
+            
+        }
+
+        .container>.box1>img{
+            height:510px;
+            width:350px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            
+        }
+
+        .container>.box2{
+            background-color: white;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            width:50%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .container>.box2>pre+h1{
+            font-family:serif;
+        }
+        .container>.box2>pre{
+            padding-top: 20px;
+        }
+        .container>.box2>input{
+            width:200px;
+            height: 40px;
+            background-color: green;
+            border-radius: 20px;
+        }
+
+        .container>.box2>pre+h1+p{
+            font-family:sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <img src="./assets/perfume.jpeg" alt="Perfume Image">
+
+        </div>
+
+        <div class="box2">
+            <pre>PERFUME</pre>
+            <h1>  Gabrielle <br> Essence Eue De <br> perfume</h1>
+            <p>A notal. solar and voluptuous<br>
+                interpretation composed by<br>
+                Olivier Polge. Perfumer-Creator<br>
+                for the House of CHANEL
+            </p>
+
+            <h1>$149.99  <strike>$169.99</strike></h1>
+
+            <input type="button" value="Add To Cart">
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
