@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 300px;
+            height: 50px;
+            margin: 20px auto;
+        }
+
+        .container input[type="text"] {
+            width: 100%;
+            padding: 7px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input type="text" name="color" id="color" placeholder="Enter a color to set the bg...">
+    </div>
+
+    <script>
+        let colorInput = document.getElementById("color");
+
+        colorInput.addEventListener("input" , () => {
+            let color = colorInput.value;
+            document.body.style.backgroundColor = color;
+        })
+        
+    </script>
+    
+</body>
+</html>
