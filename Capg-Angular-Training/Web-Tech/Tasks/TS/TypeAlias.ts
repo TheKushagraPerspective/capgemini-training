@@ -1,3 +1,5 @@
+export{}
+
 // 1. Primitive : Define a type alias username that represents a simple string
 type Username = string;
 
