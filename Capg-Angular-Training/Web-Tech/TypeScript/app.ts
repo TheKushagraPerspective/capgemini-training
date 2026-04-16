@@ -245,7 +245,147 @@ export{};
 // }
 // console.log(objInsideObj);
 
+// objInsideObj.email = "kushagra.varshney.tech@example.com";
+// console.log(objInsideObj);
 
 
 
 
+
+// type Alias
+// provide alternate name for the type and then use that alternate name in declaration
+
+// type num = number;
+// let age:num = 22;
+// console.log(age);
+
+// type str = string;
+// let name:str = "Kushagra Varshney";
+// console.log(name);
+
+// type mix = (number | string);
+// let mixDetail1:mix = 20;
+// let mixDetail2:mix = "20";
+// console.log(mixDetail1);
+// console.log(mixDetail2);
+
+
+
+// // use case in object
+// // just create a obj structure, and use it in multiple objects then
+// type obj = {
+//     name : string,
+//     age? : number,
+//     city? : string
+// };
+
+// let user1:obj = {
+//     name : "Kushagra"
+// }
+// console.log(user1);
+
+// let user2:obj = {
+//     name: "kartik",
+//     age: 22
+// }
+// console.log(user2);
+
+// let user3:obj = {
+//     name: "jitendra",
+//     age: 23,
+//     city: "unknown"
+// }
+// console.log(user3);
+
+
+// type arrayData = (number | string)[];
+
+// function array(arr:arrayData) {
+//     let newArray = arr.map((item) => {
+//         if(typeof item === "number") {
+//             return item * 7;
+//         }
+//         else {
+//             return item;
+//         }
+//     })
+
+//     return newArray;
+// }
+
+// console.log(array([1 , 2 , 3 , 4 , 5 , 6 , 7 , "kushagra"]));
+
+
+
+
+// type fun = (a : string , b : string) => string;
+
+// let newFunc:fun = (str1 , str2) => {
+//     return `${str1} and ${str2}`;
+// }
+
+// console.log(newFunc("Kushagra" , "Karthik"));
+
+
+// merging two objects
+type user = {
+    name: string,
+    email: string
+};
+
+type details = {
+    city: string,
+    pincode: number
+}
+
+type merge = user & details;
+
+let obj1:merge = {
+    name: "abc",
+    email: "abc@example.com",
+    city: "xyz",
+    pincode: 123456
+}
+console.log(obj1);
+
+
+
+// method inside obj
+type Employee = {
+    name: string;
+    age: number;
+    department: string;
+    getDetails: () => {
+        city: string;
+        country: string;
+    };
+};
+
+let emp1: Employee = {
+    name: "Kushagra Varshney",
+    age: 22,
+    department: "IT",
+    getDetails: () => {
+        return {
+            city: "Budaun",
+            country: "India"
+        };
+    }
+};
+
+console.log(emp1.getDetails());
+
+
+
+// function
+function demoFunc(a:(string|number)) : (string|number) {
+    // type guarding or narrowing
+    if(typeof a === "string") {
+        return a.toUpperCase();
+    }
+    else {
+        return a;
+    }
+}
+
+demoFunc("abc");
