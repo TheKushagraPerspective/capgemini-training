@@ -1,0 +1,9 @@
+div footer {
+    width: 100vw;
+    height: 15vh;
+    background-color: rgb(102, 42, 105);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,10 @@
+
+div main {
+    width: 100vw;
+    height: 70vh;
+    background-color: rgb(51, 171, 18);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,8 @@
+div nav {
+    width: 100vw;
+    height: 15vh;
+    background-color: rgb(255, 202, 127);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
