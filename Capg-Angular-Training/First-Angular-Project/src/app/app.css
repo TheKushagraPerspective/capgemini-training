@@ -1,5 +1,27 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  background-color: #eee;   /* optional */
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+app-sedan,
+app-suvs,
+app-luxury {
+  display: block;
+  padding: 40px;
+  color: white;
+}
+
+app-sedan { background: orange; }
+app-suvs { background: #1da1f2; }
+app-luxury { background: teal; }

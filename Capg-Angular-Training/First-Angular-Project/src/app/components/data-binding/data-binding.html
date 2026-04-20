@@ -1,0 +1,35 @@
+<p>data-binding works!</p>
+<!-- fetching the data using interpolation -->
+<p>{{username}}</p>
+<p>{{mobile}}</p>
+<p>{{user.demo}}</p>
+<p>{{user.city}}</p>
+
+<p>{{carDetails.brand}}</p>
+<p>{{carDetails.price}}</p>
+
+<!-- fetching the data using property binding :- [property-name] = "var-name" -->
+<img [src]="imageUrl" alt="">
+<h2 [hidden]="isHidden">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, nam earum magnam, dolores eius nemo cupiditate in voluptatibus minima, fugiat maiores laborum culpa adipisci corrupti nobis illum! Necessitatibus ea sed ullam doloremque illum quasi earum veniam dicta laudantium doloribus fuga quos eveniet quis nemo eum natus repellat optio vel cupiditate dolorum enim cumque rem, laborum maiores! Maiores deleniti exercitationem doloremque eaque nisi rerum veritatis, aliquid at autem est eveniet. Mollitia nesciunt corporis molestias fuga dolores, magnam praesentium sapiente perferendis repudiandae, tempora magni nemo nostrum harum impedit temporibus in inventore quis explicabo voluptatem odio quisquam ad? Pariatur a perferendis porro suscipit.
+</h2>
+
+
+<div>
+    {{isLogged ? "LoggedIn" : "LoggedOut"}}
+</div>
+<button (click)="toggleLogin()">Toggle Login</button>
+
+<div [class]="classname">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laboriosam exercitationem tempora distinctio ducimus voluptate deleniti illum quae eos dolorum, praesentium quos perspiciatis ex blanditiis!
+</div>
+
+
+
+
+<pre>{{userNameData}}</pre>
+<button (click) = "showUserData()">Show User</button>
+
+
+<h1>{{inputDataValue}}</h1>
+<input type="text" placeholder="Enter a sample text..." (input)="handleInput($event)">
