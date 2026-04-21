@@ -1,0 +1,114 @@
+<p [ngClass]="'paraClass'">directives-component works!</p>
+
+<main [ngClass]="className">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam nostrum dolorem molestias,
+    incidunt maiores eos accusantium quia distinctio ducimus laudantium debitis. Tempore amet nisi, quidem fugit
+    accusantium asperiores nam quo.</main>
+
+<br>
+
+<button (click)="toggleFunction()">changeColor</button>
+
+<br>
+
+<br>
+
+<div [ngClass]="isLogged ? 'success' : 'failed'">Hey this is div</div>
+
+<p [ngClass]="['class1','class2','class3','class4']">This is para</p>
+
+<div [ngClass]="{
+    class1 : isActive,
+    class2 : isActive,
+    class3 : isDisabled,
+}"> this is second div</div>
+
+<section [ngStyle]="{
+    color : 'red',
+    background : 'yellow',
+    padding : 8,
+}"> this is section </section>
+
+
+<h1>Structural Directives</h1>
+<p *ngIf="isLogged"> User Logged In </p>
+<button (click)="toggleLogin()">Toggle Login</button>
+
+
+
+<p *ngIf="ngIfToggle; else invalidNgIf">
+  Content is visible
+</p>
+
+<ng-template #invalidNgIf>
+  <h2>User Data</h2>
+</ng-template>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>IsMarried</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of userDetails">
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.city }}</td>
+            <td>{{ data.isMarried }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+@if (annoNgIf){
+    <p>This is the one of the control flow statement</p>
+}
+@else {
+    <p>User is not logged in</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>IsMarried</th>
+        </tr>
+    </thead>
+    
+    @for (data of userDetails; track data.city) {
+    <tbody>
+        <tr>
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.city }}</td>
+            <td>{{ data.isMarried }}</td>
+        </tr>
+    </tbody>
+    }
+    @empty {
+        <p>No Data Found</p>
+    }
+</table>
+
+
+@switch(apiStatus) {
+    @case('success') {
+        <p>Success</p>
+    }
+    @case('pending') {
+        <p>Pending</p>
+    }
+    @case('failed') {
+        <p>Failed</p>
+    }
+    @default {
+        <small>Wrong API Response</small>
+    }
+}

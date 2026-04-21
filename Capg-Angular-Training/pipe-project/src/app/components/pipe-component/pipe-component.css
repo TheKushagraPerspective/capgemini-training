@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+th,
+table,
+td,
+tr {
+    @apply border border-slate-700 text-center;
+}
+
+table {
+    @apply h-80 w-4xl m-auto;
+}
+
+#inputField {
+    @apply border
+}

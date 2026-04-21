@@ -1,0 +1,28 @@
+<p>pipe-component works!</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Description</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    @for (data of userDetails; track data.city) {
+        <tbody>
+            <tr>
+                <td>{{ data.name | titlecase }}</td>
+                <td>{{ data.age }}</td>
+                <td>{{ data.city | uppercase }}</td>
+                <td>{{ data.description | slice:0:10 }}</td>
+                <td>{{ data.salary | currency:'INR' }}</td>
+            </tr>
+        </tbody> 
+    }
+</table>
+
+<pre>{{ userDetails | json }}</pre>
+
+<input type="text" id="inputField" (input)="changenob($event)">

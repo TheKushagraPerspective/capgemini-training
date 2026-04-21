@@ -11,6 +11,17 @@
         <main>
             This is main section
         </main>
+        
+        {{taskFieldValue}}
+        {{taskInputFieldValue}}
+        <div>
+            <input type="text" 
+            placeholder="Enter some task..." 
+            id="taskField" 
+            name="taskField" 
+            [value]="taskInputFieldValue" 
+            (input)="handleOnTaskField($event)">
+        </div>
     </div>
     
 </body>

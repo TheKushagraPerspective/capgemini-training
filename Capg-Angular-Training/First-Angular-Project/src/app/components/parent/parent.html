@@ -1,0 +1,16 @@
+<p>parent works!</p>
+
+<app-child 
+  [message]="parentMessage"
+  [fruits]="fruits"
+  [user]="user"
+  (sendData) = "receiveMessage($event)">
+</app-child>
+
+
+<h4>Fruits List:</h4>
+<ul>
+  <li *ngFor="let fruit of childMessage">
+    {{ fruit }}
+  </li>
+</ul>

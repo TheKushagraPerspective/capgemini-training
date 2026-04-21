@@ -8,10 +8,14 @@ import { DataBinding } from './components/data-binding/data-binding';
 import { Sedan } from './components/sedan/sedan';
 import { Luxury } from './components/luxury/luxury';
 import { Suvs } from './components/suvs/suvs';
+import { DirectivesComponent } from './components/directives-component/directives-component';
+import { Parent } from './components/parent/parent';
+import { Child } from './components/child/child';
+
 
 @Component({
   selector: 'app-root',
-  imports: [ Nav , Main , Footer , DataBinding , Sedan , Luxury , Suvs],
+  imports: [ Nav , Main , Footer , DataBinding , Sedan , Luxury , Suvs , DirectivesComponent , Parent , Child],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
