@@ -1,0 +1,86 @@
+form {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+section {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 6px;
+  margin-left: 10px;
+}
+
+p {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #555;
+}
+
+small {
+  color: red;
+  font-size: 12px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"] {
+  background: #4CAF50;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background: #45a049;
+}
+
+button[type="reset"] {
+  background: #f44336;
+  color: white;
+}
+
+button[type="reset"]:hover {
+  background: #d32f2f;
+}

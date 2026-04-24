@@ -1,0 +1,107 @@
+<h1>Reactive Form</h1>
+
+<form [formGroup]="form" (ngSubmit)="handleform(form)">
+
+  <!-- NAME -->
+  <section>
+    <label>Name:</label>
+    <input type="text" formControlName="name">
+
+    @if(form.get('name')?.touched && form.get('name')?.errors?.['required']){
+      <small>Name is mandatory</small>
+    }
+  </section>
+
+  <!-- EMAIL -->
+  <section>
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+
+    @if(form.get('email')?.touched && form.get('email')?.errors?.['required']){
+      <small>Email is required</small>
+    }
+
+    @if(form.get('email')?.touched && form.get('email')?.errors?.['email']){
+      <small>Invalid email format</small>
+    }
+
+    @if(form.get('email')?.touched && form.get('email')?.errors?.['maxlength']){
+      <small>Max 10 characters allowed</small>
+    }
+  </section>
+
+  <!-- PASSWORD -->
+  <section>
+    <label>Password:</label>
+    <input type="password" formControlName="password">
+
+    @if(form.get('password')?.touched && form.get('password')?.errors?.['required']){
+      <small>Password is required</small>
+    }
+
+    @if(form.get('password')?.touched && form.get('password')?.errors?.['minlength']){
+      <small>Minimum 8 characters required</small>
+    }
+  </section>
+
+  <!-- GENDER -->
+  <section>
+    <p>Select Gender:</p>
+
+    <label>
+      <input type="radio" value="male" formControlName="gender"> Male
+    </label>
+
+    <label>
+      <input type="radio" value="female" formControlName="gender"> Female
+    </label>
+
+    <label>
+      <input type="radio" value="other" formControlName="gender"> Other
+    </label>
+
+    @if(form.get('gender')?.touched && form.get('gender')?.errors?.['required']){
+      <small>Gender is required</small>
+    }
+  </section>
+
+  <!-- COUNTRY -->
+  <section>
+    <label>Country:</label>
+    <select formControlName="country">
+      <option value="">-- Select --</option>
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+      <option value="australia">Australia</option>
+    </select>
+
+    @if(form.get('country')?.touched && form.get('country')?.errors?.['required']){
+      <small>Country is required</small>
+    }
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <p>Select Skills:</p>
+
+    <label>
+      <input type="checkbox" value="HTML" (change)="onCheckboxChange($event)"> HTML
+    </label>
+
+    <label>
+      <input type="checkbox" value="CSS" (change)="onCheckboxChange($event)"> CSS
+    </label>
+
+    <label>
+      <input type="checkbox" value="JavaScript" (change)="onCheckboxChange($event)"> JavaScript
+    </label>
+  </section>
+
+  <br>
+
+  <!-- BUTTONS -->
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+  <button type="reset" (click)="resetForm()">Reset</button>
+
+</form>

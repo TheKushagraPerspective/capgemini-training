@@ -1,0 +1,105 @@
+<p class="form-heading">Login Form</p>
+
+<form #myForm="ngForm" (ngSubmit)="handleForm(myForm)" class="form-container">
+
+    <!-- Name -->
+    <section class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-input" name="name" ngModel required #nameRef="ngModel" />
+
+        <small *ngIf="nameRef.invalid && (nameRef.touched || myForm.submitted)" style="color:red;">
+            Name is mandatory 
+        </small>
+    </section>
+
+    <!-- Email -->
+    <section class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" name="email" ngModel required email #emailRef="ngModel" />
+
+        <small *ngIf="emailRef.invalid && (emailRef.touched || myForm.submitted)" style="color:red;">
+            Valid email required
+        </small>
+    </section>
+
+    <!-- Password -->
+    <section class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" name="password" ngModel required minlength="8"#passwordRef="ngModel"/>
+
+        <!-- Required Error -->
+        <small *ngIf="passwordRef.errors?.['required'] && (passwordRef.touched || myForm.submitted)" style="color:red;">
+            Password is required
+        </small>
+
+        <!-- Min Length Error -->
+        <small *ngIf="passwordRef.errors?.['minlength'] && (passwordRef.touched || myForm.submitted)" style="color:red;">
+            Password must be at least 8 characters
+        </small>
+    </section>
+
+    <!-- Gender -->
+    <!-- <section>
+        <p class="form-label">Select your Gender</p>
+        <div class="form-inline">
+            <label class="form-inline-label">
+                <input type="radio" name="gender" value="male" class="accent-red-500" ngModel required> Male
+            </label>
+            <label class="form-inline-label">
+                <input type="radio" name="gender" value="female" class="accent-purple-500" ngModel> Female
+            </label>
+            <label class="form-inline-label">
+                <input type="radio" name="gender" value="others" class="accent-blue-500" ngModel> Others
+            </label>
+        </div>
+    </section> -->
+
+    <!-- Country -->
+    <!-- <section class="form-group">
+        <label class="form-label">Country</label>
+        <select class="form-select" name="country" ngModel required>
+            <option value="" disabled selected>Select</option>
+
+            <optgroup label="Asia">
+                <option value="India">India</option>
+                <option value="Georgia">Georgia</option>
+                <option value="China">China</option>
+                <option value="Russia">Russia</option>
+                <option value="Nepal">Nepal</option>
+            </optgroup>
+
+            <optgroup label="Europe">
+                <option value="Austria">Austria</option>
+                <option value="Czechia">Czechia</option>
+                <option value="Spain">Spain</option>
+                <option value="France">France</option>
+            </optgroup>
+        </select>
+    </section> -->
+
+    <!-- Skills -->
+    <!-- <section>
+        <p class="form-label">Select your Skills</p>
+        <div class="form-inline">
+            <label class="form-inline-label">
+                <input type="checkbox" name="Java" value="Java" class="accent-teal-500" ngModel> Java
+            </label>
+            <label class="form-inline-label">
+                <input type="checkbox" name="HTML" value="HTML" class="accent-cyan-500" ngModel> HTML
+            </label>
+            <label class="form-inline-label">
+                <input type="checkbox" name="CSS" value="CSS" class="accent-red-500" ngModel> CSS
+            </label>
+        </div>
+    </section> -->
+
+    <!-- Buttons -->
+    <section class="form-buttons">
+        <button class="Submit-button" type="submit">Submit</button>
+        <button class="Reset-button" type="button" (click)="resetForm(myForm)">Reset</button>
+
+    </section>
+
+    <span>Not Registered?<a href="#" id="register">register</a> here...</span>
+
+</form>

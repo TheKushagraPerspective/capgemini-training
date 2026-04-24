@@ -1,0 +1,10 @@
+<div class="player">
+  <h3>🎵 {{ currentTrack.title }}</h3>
+  <audio #audioRef [src]="currentTrack.url"></audio>
+  <div class="controls">
+    <button (click)="previous()" [disabled]="currentIndex === 0">⏮ Prev</button>
+    <button (click)="togglePlay()">{{ isPlaying ? '⏸ Pause' : '▶ Play' }}</button>
+    <button (click)="next()" [disabled]="currentIndex === audioList.length - 1">Next ⏭</button>
+  </div>
+  <p>{{ currentIndex + 1 }} / {{ audioList.length }}</p>
+</div>

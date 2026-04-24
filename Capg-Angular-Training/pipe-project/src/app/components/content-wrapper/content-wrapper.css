@@ -1,0 +1,16 @@
+.wrapper {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.slot {
+  margin-bottom: 15px;
+}
+
+img, video, audio {
+  width: 100%;
+  border-radius: 6px;
+}

@@ -1,0 +1,24 @@
+<div class="parent-container">
+
+  <h2 class="title">Parent Component</h2>
+
+  <!-- Service Data Card -->
+  <div class="card">
+    <h3>User Details</h3>
+
+    <p><span>Name:</span> {{ userData.userObj.name }}</p>
+    <p><span>Age:</span> {{ userData.userObj.age }}</p>
+    <p><span>Gender:</span> {{ userData.userObj.gender }}</p>
+    <p><span>Married:</span> {{ userData.userObj.isMarried }}</p>
+
+    <p class="demo">{{ userData.demoVariable }}</p>
+  </div>
+
+  <!-- Child Component -->
+  <div class="child-box">
+    <app-child-component 
+      [parentMessage]="parentToChild">
+    </app-child-component>
+  </div>
+
+</div>

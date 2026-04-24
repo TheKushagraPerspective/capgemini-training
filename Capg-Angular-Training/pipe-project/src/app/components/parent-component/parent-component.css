@@ -1,0 +1,51 @@
+/* Container */
+.parent-container {
+  max-width: 500px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Card Design */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.card p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.card span {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Demo Variable Highlight */
+.demo {
+  margin-top: 15px;
+  padding: 8px;
+  background-color: #f0f8ff;
+  border-left: 4px solid #007bff;
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* Child Box */
+.child-box {
+  padding: 15px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
