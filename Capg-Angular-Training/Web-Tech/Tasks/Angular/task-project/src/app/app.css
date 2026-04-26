@@ -1,0 +1,27 @@
+/* body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  background-color: #eee;  
+}
+
+ .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+app-sedan,
+app-suvs,
+app-luxury {
+  display: block;
+  padding: 40px;
+  color: white;
+}
+
+app-sedan { background: orange; }
+app-suvs { background: #1da1f2; }
+app-luxury { background: teal; } */

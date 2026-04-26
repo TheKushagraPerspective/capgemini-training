@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 2rem;
+}
+
+
+/* Layout container (replaces .grid safely) */
+.car-grid {
+  @apply grid grid-cols-3 gap-0 rounded-xl overflow-hidden justify-center;
+}
+
+/* Individual sections */
+app-sedan,
+app-suvs,
+app-luxury {
+  @apply block p-10 text-white;
+}
+
+/* Backgrounds */
+app-sedan {
+  @apply bg-orange-500;
+}
+
+app-suvs {
+  @apply bg-sky-500;
+}
+
+app-luxury {
+  @apply bg-teal-600;
+}
+
+
+
+/* Navbar container */
+.navbar {
+    @apply bg-amber-700 text-amber-100 flex h-10 w-full justify-around items-center;
+}
+
+/* Remove default list style */
+.navbar > li {
+    @apply list-none;
+}
+
+/* Anchor styling */
+.navbar a {
+    @apply px-3 py-1 rounded-md transition duration-200;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    @apply bg-amber-500 text-white;
+}
+
+/* Active route styling */
+.active {
+    @apply p-2 bg-blue-200 text-green-800 border border-green-700 rounded-2xl px-3 py-1;
+}
+
+
+.homeMain {
+    @apply flex
+}
+
+.homeAside {
+    @apply h-120 w-50 bg-amber-300 flex flex-col justify-around p-3 text-center
+}
+
+.nestactive {
+    @apply bg-amber-500 text-red-700 border rounded-2xl
+}
+
+
+
+
+
+/* Container */
+.product-container {
+  @apply max-w-5xl mx-auto mt-10 px-4;
+}
+
+/* Title */
+.table-title {
+  @apply text-2xl font-bold text-gray-800 mb-6 text-center;
+}
+
+/* Wrapper (for shadow + scroll) */
+.table-wrapper {
+  @apply overflow-x-auto bg-white shadow-lg rounded-xl;
+}
+
+/* Table */
+.product-table {
+  @apply w-full border-collapse;
+}
+
+/* Table header */
+.product-table thead {
+  @apply bg-gray-100 text-gray-700;
+}
+
+.product-table th {
+  @apply px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide;
+}
+
+/* Rows */
+.table-row {
+  @apply border-b transition duration-200;
+}
+
+.table-row:hover {
+  @apply bg-gray-50;
+}
+
+/* Table data */
+.product-table td {
+  @apply px-6 py-4 text-sm text-gray-700;
+}
+
+/* Title cell */
+.title-cell {
+  @apply font-medium text-gray-900;
+}
+
+/* Image styling */
+.product-img {
+  @apply w-20 h-20 object-cover rounded-lg border shadow-sm;
+}
